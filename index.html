@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Hotel | Ethiopian Restaurant & Hotel in Dire Dawa | Near Airport</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Ethiopian Flag Colors + Earth Tones */
+            --ethiopian-red: #DA121A;
+            --ethiopian-yellow: #FCDD09;
+            --ethiopian-green: #078930;
+            --deep-earth: #5C4033;
+            --warm-sand: #F4E4C1;
+            --rich-brown: #3E2723;
+            --burnt-sienna: #A0522D;
+            --cream: #FFF8E7;
+            --off-white: #FFFEF9;
+            --charcoal: #2C2416;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--rich-brown);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Ethiopian Pattern Background */
+        .pattern-bg {
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(218, 18, 26, 0.03) 10px,
+                    rgba(218, 18, 26, 0.03) 20px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(7, 137, 48, 0.03) 10px,
+                    rgba(7, 137, 48, 0.03) 20px
+                );
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 36, 22, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 3px solid var(--ethiopian-red);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--ethiopian-yellow);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '⭐';
+            font-size: 1.5rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--ethiopian-yellow);
+            color: var(--ethiopian-yellow);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--ethiopian-red);
+            border-color: var(--ethiopian-red);
+            color: white;
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: block;
+        }
+
+        nav a:hover {
+            color: var(--ethiopian-yellow);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--ethiopian-red), var(--ethiopian-yellow), var(--ethiopian-green));
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background: var(--ethiopian-red);
+            color: white !important;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn::after {
+            display: none;
+        }
+
+        .cta-btn:hover {
+            background: var(--ethiopian-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(218, 18, 26, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(44, 36, 22, 0.8), rgba(92, 64, 51, 0.7)), 
+                        url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(252, 221, 9, 0.05) 2px,
+                    rgba(252, 221, 9, 0.05) 4px
+                );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--ethiopian-yellow);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .flag-line {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 1.5rem auto 2rem;
+            max-width: 300px;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .flag-line div {
+            flex: 1;
+        }
+
+        .flag-green { background: var(--ethiopian-green); }
+        .flag-yellow { background: var(--ethiopian-yellow); }
+        .flag-red { background: var(--ethiopian-red); }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            color: var(--cream);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .info-item::before {
+            content: '●';
+            color: var(--ethiopian-red);
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 3.5rem;
+            color: var(--rich-brown);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--deep-earth);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Brand Intro */
+        .brand-intro {
+            background: var(--off-white);
+            border-left: 5px solid var(--ethiopian-red);
+            border-right: 5px solid var(--ethiopian-green);
+            padding: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--rich-brown);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .brand-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 5px;
+            right: 5px;
+            height: 5px;
+            background: var(--ethiopian-yellow);
+        }
+
+        /* Featured Dishes */
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .dish-card {
+            background: var(--off-white);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--ethiopian-red);
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(218, 18, 26, 0.25);
+            border-top-color: var(--ethiopian-green);
+        }
+
+        .dish-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--deep-earth), var(--burnt-sienna));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dish-image img {
+            display: block;
+        }
+
+        .dish-image:hover .zoom-icon {
+            opacity: 1 !important;
+        }
+
+        .dish-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(218, 18, 26, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .dish-info {
+            padding: 2rem;
+        }
+
+        .dish-name {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--rich-brown);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .dish-desc {
+            color: var(--deep-earth);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .dish-price {
+            font-size: 1.5rem;
+            color: var(--ethiopian-red);
+            font-weight: 600;
+        }
+
+        /* What to Expect */
+        .expect-section {
+            background: linear-gradient(135deg, var(--rich-brown), var(--deep-earth));
+            color: var(--cream);
+            text-align: center;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expect-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(252, 221, 9, 0.05) 20px,
+                    rgba(252, 221, 9, 0.05) 40px
+                );
+            pointer-events: none;
+        }
+
+        .expect-section .section-title {
+            color: var(--ethiopian-yellow);
+            z-index: 2;
+            position: relative;
+        }
+
+        .expect-content {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
+        }
+
+        .service-card:hover {
+            border-color: var(--ethiopian-red);
+            transform: scale(1.05);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: var(--rich-brown);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            color: var(--deep-earth);
+            font-size: 1rem;
+        }
+
+        /* Gallery with Lightbox */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item::before {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 3rem;
+            z-index: 2;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(218, 18, 26, 0);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .gallery-item:hover::after {
+            background: rgba(218, 18, 26, 0.4);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--ethiopian-red);
+            transform: scale(1.2);
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--ethiopian-red);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Location */
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .location-info {
+            background: var(--off-white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--ethiopian-red);
+        }
+
+        .location-info h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--rich-brown);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .location-detail {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--deep-earth);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .location-detail strong {
+            color: var(--rich-brown);
+            min-width: 120px;
+        }
+
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--ethiopian-green);
+        }
+
+        .contact-card:hover {
+            background: var(--ethiopian-red);
+            color: white;
+            transform: translateY(-5px);
+            border-top-color: var(--ethiopian-yellow);
+        }
+
+        .contact-card:hover h3,
+        .contact-card:hover a {
+            color: white !important;
+        }
+
+        .contact-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--rich-brown);
+        }
+
+        .contact-card a {
+            color: var(--deep-earth);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--off-white);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--ethiopian-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 6rem;
+            color: var(--ethiopian-yellow);
+            font-family: Georgia, serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            color: var(--deep-earth);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            color: var(--rich-brown);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 3rem 2rem 1.5rem;
+            border-top: 4px solid;
+            border-image: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red)) 1;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--ethiopian-yellow);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--cream);
+            text-decoration: none;
+            line-height: 2;
+            font-size: 1.05rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--ethiopian-red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: var(--ethiopian-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(252, 221, 9, 0.3);
+            color: var(--ethiopian-yellow);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(44, 36, 22, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                border-top: 3px solid var(--ethiopian-red);
+                z-index: 100;
+            }
+
+            nav ul.mobile-open {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 1.2rem 2rem;
+                width: 100%;
+                border-bottom: 1px solid rgba(252, 221, 9, 0.15);
+            }
+
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:hover {
+                background: rgba(218, 18, 26, 0.2);
+            }
+
+            .cta-btn {
+                margin: 0.5rem 0 !important;
+                background: var(--ethiopian-red) !important;
+            }
+
+            .cta-btn:hover {
+                background: var(--ethiopian-green) !important;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title::after {
+                width: 80px;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .brand-intro {
+                padding: 2rem;
+                font-size: 1.1rem;
+            }
+
+            .flag-line {
+                max-width: 250px;
+                height: 5px;
+            }
+
+            .dishes-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .dish-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .expect-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .expect-content {
+                font-size: 1.1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .location-info {
+                padding: 2rem;
+            }
+
+            .map-container {
+                min-height: 300px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .testimonials {
+                padding: 3rem 1.5rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .cta-btn {
+                display: block !important;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-close {
+                font-size: 2.5rem;
+                top: -35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .flag-line {
+                max-width: 200px;
+                height: 4px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-title::after {
+                width: 60px;
+                height: 3px;
+            }
+
+            .brand-intro {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+
+            .dish-name {
+                font-size: 1.5rem;
+            }
+
+            .dish-desc {
+                font-size: 1rem;
+            }
+
+            .service-card,
+            .contact-card,
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .location-info {
+                padding: 1.5rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Orbit Hotel</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+            <ul id="mobileMenu">
+                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="#menu" onclick="closeMobileMenu()">Menu</a></li>
+                <li><a href="#rooms" onclick="closeMobileMenu()">Rooms</a></li>
+                <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">Our Story</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+                <li><a href="#menu" class="cta-btn" onclick="closeMobileMenu()">View Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Orbit Hotel</h1>
+            <p class="hero-subtitle">Ethiopian Restaurant & Hotel in Dire Dawa</p>
+            <div class="flag-line">
+                <div class="flag-green"></div>
+                <div class="flag-yellow"></div>
+                <div class="flag-red"></div>
+            </div>
+            <div class="hero-info">
+                <div class="info-item">2 Minutes from Airport</div>
+                <div class="info-item">Daily 09AM - 10PM</div>
+            </div>
+            <div style="margin-top: 2.5rem;">
+                <a href="#menu" class="cta-btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Explore Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Intro -->
+    <section class="pattern-bg" style="padding-top: 6rem;">
+        <div class="brand-intro">
+            Welcome to Orbit Hotel, your home away from home in Dire Dawa. We are both an authentic Ethiopian restaurant and a comfortable hotel, located just 2 minutes from the airport. Whether you're staying with us or dining in, we honor the communal spirit of Ethiopian culture—serving traditional dishes on injera with love and care, and offering warm hospitality in our clean, modern rooms. From our aromatic coffee ceremony to the bold flavors of our wots and tibs, and from comfortable overnight stays to memorable meals, every experience celebrates heritage, warmth, and togetherness.
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section id="menu" class="pattern-bg">
+        <h2 class="section-title">Signature Dishes</h2>
+        <p class="section-subtitle">Traditional and modern Ethiopian favorites, prepared with authentic spices and served with injera</p>
+        
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="images/dishes/doro-wat.jpg" alt="Doro Wat" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Doro Wat</h3>
+                    <p class="dish-desc">Spicy chicken stew slow-cooked with berbere spices, onions, and boiled eggs, served with injera</p>
+                    <p class="dish-price">ETB 450</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="images/dishes/kitfo.jpg" alt="Kitfo" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Kitfo</h3>
+                    <p class="dish-desc">Minced raw beef marinated in mitmita spice and niter kibbeh, served with ayib cheese and gomen</p>
+                    <p class="dish-price">ETB 550</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="images/dishes/tibs.jpg" alt="Tibs" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Tibs</h3>
+                    <p class="dish-desc">Sautéed beef or lamb with onions, peppers, and aromatic Ethiopian spices</p>
+                    <p class="dish-price">ETB 400</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="images/dishes/beyainatu.jpg" alt="Beyainatu" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Beyainatu (Veggie Combo)</h3>
+                    <p class="dish-desc">Assortment of vegetarian dishes including misir wat, gomen, shiro, and tikil gomen on injera</p>
+                    <p class="dish-price">ETB 300</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="images/dishes/sambusa.jpg" alt="Sambusa" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Sambusa</h3>
+                    <p class="dish-desc">Crispy pastry filled with spiced lentils or minced meat, perfect as a starter</p>
+                    <p class="dish-price">ETB 100</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="images/dishes/coffee.jpg" alt="Ethiopian Coffee" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Ethiopian Coffee Ceremony</h3>
+                    <p class="dish-desc">Traditional coffee ceremony experience with freshly roasted and brewed coffee</p>
+                    <p class="dish-price">ETB 150</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;">Download Full Menu (PDF)</a>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <div class="expect-section">
+        <h2 class="section-title">The Ethiopian Dining Experience</h2>
+        <div class="expect-content">
+            Experience the warmth of Ethiopian hospitality in our authentic dining space. Meals are served communally on injera, Ethiopia's signature sourdough flatbread, encouraging sharing and connection. Watch as we prepare traditional coffee in our ceremonial jebena, filling the air with rich aromas. Whether you're new to Ethiopian cuisine or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration.
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="pattern-bg">
+        <h2 class="section-title">How We Serve You</h2>
+        <p class="section-subtitle">Bringing Ethiopian traditions to Dire Dawa</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🍽️</div>
+                <h3 class="service-title">Communal Dining</h3>
+                <p class="service-desc">Experience traditional Ethiopian-style meals served on large injera platters for sharing.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛏️</div>
+                <h3 class="service-title">Comfortable Rooms</h3>
+                <p class="service-desc">Clean, modern rooms just 2 minutes from the airport. Perfect for travelers and business guests.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3 class="service-title">Takeaway & Delivery</h3>
+                <p class="service-desc">Enjoy our authentic flavors at home with our convenient takeaway and delivery options.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">☕</div>
+                <h3 class="service-title">Coffee Ceremony</h3>
+                <p class="service-desc">Experience the traditional Ethiopian coffee ceremony, a cultural highlight of any visit.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3 class="service-title">Airport Proximity</h3>
+                <p class="service-desc">Just 2 minutes from Dire Dawa Airport. Ideal for early flights or late arrivals.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎉</div>
+                <h3 class="service-title">Private Events</h3>
+                <p class="service-desc">Host your celebrations with us and share the joy of Ethiopian cuisine with loved ones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Accommodation -->
+    <section id="rooms" class="pattern-bg">
+        <h2 class="section-title">Rooms & Accommodation</h2>
+        <p class="section-subtitle">Comfortable stays just minutes from the airport</p>
+
+        <div style="background: var(--off-white); padding: 3rem; border-radius: 8px; max-width: 900px; margin: 0 auto 4rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-left: 5px solid var(--ethiopian-green); border-right: 5px solid var(--ethiopian-red);">
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--rich-brown); text-align: center;">
+                After a long flight or between adventures, rest in our clean, comfortable rooms designed for the modern traveler. Each room features essential amenities and authentic Ethiopian touches, making you feel at home while away from home.
+            </p>
+        </div>
+
+        <div class="dishes-grid" style="margin-bottom: 4rem;">
+            <div class="dish-card">
+                <div class="dish-image" onclick="openRoomLightbox(0)" style="cursor: pointer; position: relative;">
+                    <img src="images/rooms/standard-room.jpg" alt="Standard Room" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Standard Room</h3>
+                    <p class="dish-desc">Cozy room with comfortable bed, private bathroom, WiFi, and air conditioning. Perfect for solo travelers.</p>
+                    <p class="dish-price">From ETB 800/night</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" onclick="openRoomLightbox(1)" style="cursor: pointer; position: relative;">
+                    <img src="images/rooms/double-room.jpg" alt="Double Room" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Double Room</h3>
+                    <p class="dish-desc">Spacious room with double bed, work desk, modern bathroom, and complimentary breakfast included.</p>
+                    <p class="dish-price">From ETB 1,200/night</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image" onclick="openRoomLightbox(2)" style="cursor: pointer; position: relative;">
+                    <img src="images/rooms/suite.jpg" alt="Suite" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+                </div>
+                <div class="dish-info">
+                    <h3 class="dish-name">Deluxe Suite</h3>
+                    <p class="dish-desc">Premium suite with separate living area, king bed, luxury bathroom, minibar, and stunning views.</p>
+                    <p class="dish-price">From ETB 2,000/night</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, var(--ethiopian-green), var(--deep-earth)); color: var(--cream); padding: 3rem 2rem; border-radius: 8px; margin-bottom: 3rem;">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--ethiopian-yellow);">Room Amenities</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📶</div>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Free WiFi</h4>
+                    <p style="font-size: 1rem; opacity: 0.9;">High-speed internet in all rooms</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">❄️</div>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Air Conditioning</h4>
+                    <p style="font-size: 1rem; opacity: 0.9;">Climate control for comfort</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚿</div>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Private Bathroom</h4>
+                    <p style="font-size: 1rem; opacity: 0.9;">Hot water & toiletries</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📺</div>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Flat-Screen TV</h4>
+                    <p style="font-size: 1rem; opacity: 0.9;">Cable channels available</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🍳</div>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Breakfast Included</h4>
+                    <p style="font-size: 1rem; opacity: 0.9;">Traditional Ethiopian breakfast</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚗</div>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Airport Shuttle</h4>
+                    <p style="font-size: 1rem; opacity: 0.9;">Free transport on request</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; background: var(--off-white); padding: 3rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; color: var(--rich-brown); margin-bottom: 1rem;">Ready to Book Your Stay?</h3>
+            <p style="font-size: 1.2rem; color: var(--deep-earth); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Contact us directly to reserve your room. We're here to make your stay in Dire Dawa comfortable and memorable.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; text-decoration: none;">📞 Call to Book</a>
+                <a href="https://wa.me/251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; background: var(--ethiopian-green); text-decoration: none;">💬 WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2 class="section-title">A Taste of Ethiopia</h2>
+        <p class="section-subtitle">Click any photo to view it larger</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)">
+                <img src="images/gallery/ambience.jpg" alt="Restaurant ambience">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+                <img src="images/gallery/dining-area.jpg" alt="Dining area">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+                <img src="images/gallery/interior.jpg" alt="Restaurant interior">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+                <img src="images/gallery/kitchen.jpg" alt="Making injera">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="images/gallery/seating1.jpg" alt="People dining">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="images/gallery/serving.jpg" alt="Serving">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+            <button class="lightbox-prev" onclick="changeImage(-1, event)">&#10094;</button>
+            <img id="lightboxImage" src="" alt="Gallery image">
+            <button class="lightbox-next" onclick="changeImage(1, event)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <h2 class="section-title">What Our Guests Say</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">The most authentic Ethiopian food I've had outside of Addis Ababa! The injera is perfect and the doro wat reminds me of home. The rooms are spotless and comfortable. A must-visit for anyone traveling through Dire Dawa.</p>
+                <p class="testimonial-author">— Tigist Alemayehu</p>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">My first experience with Ethiopian food and I'm hooked! The staff was patient in explaining everything, and the communal dining experience was so warm and welcoming. The hotel is conveniently located - I'll definitely stay here on my next visit!</p>
+                <p class="testimonial-author">— Abebe Bekele</p>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Perfect for business travelers! The coffee ceremony alone is worth the visit, and being so close to the airport made my early morning flight stress-free. The vegetarian platter is incredible. Highly recommend!</p>
+                <p class="testimonial-author">— Hiwot Mekonnen</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location -->
+    <section id="about" class="pattern-bg">
+        <h2 class="section-title">Find Us</h2>
+        <p class="section-subtitle">Conveniently located near Dire Dawa Airport</p>
+        
+        <div class="location-content">
+            <div class="location-info">
+                <h3>Location & Hours</h3>
+                
+                <div class="location-detail">
+                    <strong>Address:</strong>
+                    <span>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia<br>(2 minutes from airport)</span>
+                </div>
+
+                <div class="location-detail">
+                    <strong>Hours:</strong>
+                    <span>Daily<br>09:00 AM - 10:00 PM</span>
+                </div>
+
+                <div class="location-detail">
+                    <strong>Note:</strong>
+                    <span>Perfect for travelers! Walk-ins welcome. Call ahead for groups of 8+ or coffee ceremony reservations.</span>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <a href="#" class="cta-btn" style="display: inline-block;">Get Directions</a>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.5!2d41.8661!3d9.5931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMzUnMzUuMiJOIDQxwrA1MSc1OC4wIkU!5e0!3m2!1sen!2set!4v1234567890"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📞 Phone</h3>
+                <a href="tel:+251912345678">+251 91 234 5678</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>💬 WhatsApp</h3>
+                <a href="https://wa.me/251912345678">+251 91 234 5678</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>✉️ Email</h3>
+                <a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
+            <div class="social-links" style="justify-content: center;">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Orbit Hotel</h4>
+                <p>Authentic Ethiopian restaurant and comfortable hotel in Dire Dawa. Just 2 minutes from the airport. Experience traditional cuisine and warm hospitality, whether dining or staying with us.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#menu">Menu</a></p>
+                <p><a href="#rooms">Rooms</a></p>
+                <p><a href="#gallery">Gallery</a></p>
+                <p><a href="#about">Our Story</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia</p>
+                <p>+251 91 234 5678</p>
+                <p>hello@orbit-hotel.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Orbit Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('mobile-open');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('mobile-open');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('mobile-open')) {
+                menu.classList.remove('mobile-open');
+            }
+        });
+
+        // Lightbox Gallery
+        const galleryImages = [
+            'images/gallery/ambience.jpg',
+            'images/gallery/dining-area.jpg',
+            'images/gallery/interior.jpg',
+            'images/gallery/kitchen.jpg',
+            'images/gallery/seating1.jpg',
+            'images/gallery/serving.jpg'
+        ];
+
+        const roomImages = [
+            'images/rooms/standard-room.jpg',
+            'images/rooms/double-room.jpg',
+            'images/rooms/suite.jpg'
+        ];
+
+        let currentImageIndex = 0;
+        let currentImageSet = 'gallery';
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            currentImageSet = 'gallery';
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImage');
+            img.src = galleryImages[index];
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openRoomLightbox(index) {
+            currentImageIndex = index;
+            currentImageSet = 'rooms';
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImage');
+            img.src = roomImages[index];
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target === event.currentTarget || event.target.classList.contains('lightbox-close')) {
+                const modal = document.getElementById('lightboxModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function changeImage(direction, event) {
+            event.stopPropagation();
+            
+            const images = currentImageSet === 'gallery' ? galleryImages : roomImages;
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            
+            const img = document.getElementById('lightboxImage');
+            img.src = images[currentImageIndex];
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('lightboxModal');
+            if (modal.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    closeLightbox(event);
+                } else if (event.key === 'ArrowLeft') {
+                    changeImage(-1, event);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1, event);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
