@@ -173,14 +173,9 @@
             box-shadow: 0 8px 20px rgba(218, 18, 26, 0.3);
         }
 
-        /* Hero Section */
+        /* Hero Section with Carousel */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(44, 36, 22, 0.8), rgba(92, 64, 51, 0.7)), 
-                        url('images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -189,6 +184,65 @@
             overflow: hidden;
         }
 
+        /* Hero Slideshow Container */
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Individual Slides */
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: slideshow 18s infinite;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Stagger animation for each slide */
+        .hero-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-slide:nth-child(2) {
+            animation-delay: 6s;
+        }
+
+        .hero-slide:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        /* Slideshow animation - smooth fade */
+        @keyframes slideshow {
+            0% { opacity: 0; transform: scale(1); }
+            5% { opacity: 1; transform: scale(1); }
+            33.33% { opacity: 1; transform: scale(1.05); }
+            38.33% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+        /* Overlay for all slides */
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 22, 0.8), rgba(92, 64, 51, 0.7));
+            z-index: 1;
+        }
+
+        /* Pattern overlay */
         .hero::before {
             content: '';
             position: absolute;
@@ -205,6 +259,7 @@
                     rgba(252, 221, 9, 0.05) 4px
                 );
             pointer-events: none;
+            z-index: 1;
         }
 
         .hero-content {
@@ -212,6 +267,7 @@
             padding: 2rem;
             z-index: 2;
             animation: fadeInUp 1.2s ease-out;
+            position: relative;
         }
 
         @keyframes fadeInUp {
@@ -908,6 +964,11 @@
                 display: block;
             }
 
+            /* Disable parallax on mobile for better performance */
+            .hero-slide {
+                background-attachment: scroll;
+            }
+
             nav {
                 padding: 1rem 1.5rem;
             }
@@ -1186,6 +1247,14 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Hero Slideshow Background -->
+        <div class="hero-slideshow">
+            <div class="hero-slide" style="background-image: url('images/hero/hero-1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-3.jpg');"></div>
+        </div>
+
+        <!-- Hero Content (stays on top) -->
         <div class="hero-content">
             <h1>Orbit Hotel</h1>
             <p class="hero-subtitle">Ethiopian Restaurant & Hotel in Dire Dawa</p>
@@ -1214,7 +1283,8 @@
     <!-- Featured Dishes -->
     <section id="menu" class="pattern-bg">
         <h2 class="section-title">Signature Dishes</h2>
-        <p class="section-subtitle">Traditional and modern Ethiopian and African favorites, prepared with authentic spices. Served fresh and warm, just in time to feed all your cravings. </p>
+        <p class="section-subtitle">Traditional, modern, Ethiopian, and African favorites, prepared with authentic spices. Served fresh and warm, just in time to feed all your cravings.</p>
+        
         <div class="dishes-grid">
             <div class="dish-card">
                 <div class="dish-image">
@@ -1290,9 +1360,9 @@
 
     <!-- What to Expect -->
     <div class="expect-section">
-        <h2 class="section-title">Delightful Dining and Living </h2>
+        <h2 class="section-title">Delightful Dining and Living</h2>
         <div class="expect-content">
-            Experience the warmth of Continental and African hospitality in our authentic dining and living spaces. Meals are served with love and care, ensuring that you savour every bite delightfully. We embrace personal and communial dining experiences, Watch as we prepare traditional coffee in our ceremonial jebena, filling the air with rich aromas. Whether you're new to Ethiopian, Somali, or African cuisines, or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration. Finally, enjoy our cozy accomodation facilities
+            Experience the warmth of Ethiopian hospitality in our authentic dining space. Meals are served communally on injera, Ethiopia's signature sourdough flatbread, encouraging sharing and connection. Watch as we prepare traditional coffee in our ceremonial jebena, filling the air with rich aromas. Whether you're new to Ethiopian cuisine or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration.
         </div>
     </div>
 
@@ -1302,11 +1372,7 @@
         <p class="section-subtitle">Bringing Premium Experiences to Dire Dawa</p>
         
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🍽️</div>
-                <h3 class="service-title">Communal Dining</h3>
-                <p class="service-desc">Experience traditional Ethiopian-style meals served on large injera platters for sharing.</p>
-            </div>
+            
 
             <div class="service-card">
                 <div class="service-icon">🛏️</div>
@@ -1320,12 +1386,7 @@
                 <p class="service-desc">Enjoy our authentic flavors at home with our convenient takeaway and delivery options.</p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">☕</div>
-                <h3 class="service-title">Coffee Ceremony</h3>
-                <p class="service-desc">Experience the traditional Ethiopian coffee ceremony, a cultural highlight of any visit.</p>
-            </div>
-
+            
             <div class="service-card">
                 <div class="service-icon">🚗</div>
                 <h3 class="service-title">Airport Proximity</h3>
@@ -1439,12 +1500,12 @@
 
     <!-- Gallery -->
     <section id="gallery">
-        <h2 class="section-title">A Taste of Ethiopia</h2>
+        <h2 class="section-title">A Taste of Orbit Hotel</h2>
         <p class="section-subtitle">Click any photo to view it larger</p>
         
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox(0)">
-                <img src="images/gallery/ambience.jpg" alt="Restaurant ambience">
+                <img src="images/gallery/ambience.jpg" alt="Hotel Ambience feel">
             </div>
             <div class="gallery-item" onclick="openLightbox(1)">
                 <img src="images/gallery/dining-area.jpg" alt="Dining area">
@@ -1453,13 +1514,19 @@
                 <img src="images/gallery/interior.jpg" alt="Restaurant interior">
             </div>
             <div class="gallery-item" onclick="openLightbox(3)">
-                <img src="images/gallery/kitchen.jpg" alt="Making injera">
+                <img src="images/gallery/kitchen.jpg" alt="Kitchen">
             </div>
             <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/gallery/seating1.jpg" alt="People dining">
+                <img src="images/gallery/seating1.jpg" alt="Hotel dining seating area">
             </div>
             <div class="gallery-item" onclick="openLightbox(5)">
-                <img src="images/gallery/serving.jpg" alt="Serving">
+                <img src="images/gallery/serving.jpg" alt="Our servings">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="images/gallery/serving2.jpg" alt="Our servings">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="images/gallery/serving3.jpg" alt="Our servings">
             </div>
         </div>
     </section>
@@ -1563,9 +1630,9 @@
         <div style="text-align: center; margin-top: 3rem;">
             <h3 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
             <div class="social-links" style="justify-content: center;">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#">📸</a>
+                <a href="#">👍</a>
+                <a href="#">🐦</a>
             </div>
         </div>
     </section>
