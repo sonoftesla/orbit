@@ -1035,9 +1035,34 @@
                 background: var(--deep-gold) !important;
             }
 
-            .logo {
-                font-size: 1.5rem;
+                    .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        @media (max-width: 480px) {
+            .logo span {
+                font-size: 1rem !important;
             }
+
+            .logo-image {
+                height: 35px;
+            }
+        }
 
             .logo-image {
                 height: 40px;  /* Smaller on mobile */
@@ -1249,6 +1274,7 @@
         <nav>
             <a href="#home" class="logo">
                 <img src="images/logo.svg" alt="Orbit Hotel Logo" class="logo-image">
+                <span style="font-family: 'Merriweather', serif; font-size: 1.3rem; font-weight: 600; color: var(--soft-black); letter-spacing: 0.5px;">Orbit Hotel</span>
             </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
             <ul id="mobileMenu">
