@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbit Hotel - Ethiopian Restaurant & Hotel in Dire Dawa </title>
+    <title>Orbit Hotel | Ethiopian Restaurant & Hotel in Dire Dawa | Near Airport</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Ethiopian Flag Colors + Earth Tones */
-            --ethiopian-red: #DA121A;
-            --ethiopian-yellow: #FCDD09;
-            --ethiopian-green: #078930;
-            --deep-earth: #5C4033;
-            --warm-sand: #F4E4C1;
-            --rich-brown: #3E2723;
-            --burnt-sienna: #A0522D;
-            --cream: #FFF8E7;
-            --off-white: #FFFEF9;
-            --charcoal: #2C2416;
+            /* Luxury White & Champagne Gold Color Palette */
+            --luxury-white: #FFFFFF;
+            --soft-cream: #FAF9F6;
+            --off-white: #F8F8F8;
+            --champagne-gold: #F7E7CE;
+            --rich-gold: #D4AF37;
+            --deep-gold: #B8860B;
+            --charcoal: #2C2C2C;
+            --soft-black: #1A1A1A;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E8E8E8;
+            --text-dark: #333333;
         }
 
         * {
@@ -28,29 +40,30 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--rich-brown);
-            background: var(--cream);
+            color: var(--text-dark);
+            background: var(--luxury-white);
             overflow-x: hidden;
             line-height: 1.7;
         }
 
-        /* Ethiopian Pattern Background */
+        /* Subtle Gold Pattern Background */
         .pattern-bg {
             background-image: 
                 repeating-linear-gradient(
                     45deg,
                     transparent,
                     transparent 10px,
-                    rgba(218, 18, 26, 0.03) 10px,
-                    rgba(218, 18, 26, 0.03) 20px
+                    rgba(247, 231, 206, 0.08) 10px,
+                    rgba(247, 231, 206, 0.08) 20px
                 ),
                 repeating-linear-gradient(
                     -45deg,
                     transparent,
                     transparent 10px,
-                    rgba(7, 137, 48, 0.03) 10px,
-                    rgba(7, 137, 48, 0.03) 20px
+                    rgba(212, 175, 55, 0.05) 10px,
+                    rgba(212, 175, 55, 0.05) 20px
                 );
+            background-color: var(--soft-cream);
         }
 
         /* Header */
@@ -58,10 +71,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(44, 36, 22, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 3px solid var(--ethiopian-red);
+            border-bottom: 2px solid var(--champagne-gold);
+            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.1);
         }
 
         nav {
@@ -75,26 +89,29 @@
         }
 
         .logo {
-            font-family: 'Merriweather', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--ethiopian-yellow);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.3s ease;
         }
 
-        .logo::before {
-            content: '⭐';
-            font-size: 1.5rem;
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
 
         .mobile-menu-toggle {
             display: none;
             background: none;
-            border: 2px solid var(--ethiopian-yellow);
-            color: var(--ethiopian-yellow);
+            border: 2px solid var(--rich-gold);
+            color: var(--rich-gold);
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem 0.8rem;
@@ -104,8 +121,8 @@
         }
 
         .mobile-menu-toggle:hover {
-            background: var(--ethiopian-red);
-            border-color: var(--ethiopian-red);
+            background: var(--rich-gold);
+            border-color: var(--rich-gold);
             color: white;
         }
 
@@ -125,10 +142,10 @@
         }
 
         nav a {
-            color: var(--cream);
+            color: var(--charcoal);
             text-decoration: none;
             font-size: 1.05rem;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             position: relative;
@@ -136,7 +153,7 @@
         }
 
         nav a:hover {
-            color: var(--ethiopian-yellow);
+            color: var(--rich-gold);
         }
 
         nav a::after {
@@ -146,7 +163,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--ethiopian-red), var(--ethiopian-yellow), var(--ethiopian-green));
+            background: linear-gradient(90deg, var(--rich-gold), var(--champagne-gold));
             transition: width 0.3s ease;
         }
 
@@ -155,12 +172,13 @@
         }
 
         .cta-btn {
-            background: var(--ethiopian-red);
-            color: white !important;
+            background: var(--rich-gold);
+            color: var(--luxury-white) !important;
             padding: 0.8rem 2rem;
             border-radius: 4px;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: 2px solid var(--rich-gold);
         }
 
         .cta-btn::after {
@@ -168,12 +186,13 @@
         }
 
         .cta-btn:hover {
-            background: var(--ethiopian-green);
+            background: var(--soft-black);
+            border-color: var(--soft-black);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(218, 18, 26, 0.3);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
         }
 
-        /* Hero Section with Carousel */
+        /* Hero Section with Video Background */
         .hero {
             height: 100vh;
             display: flex;
@@ -184,66 +203,46 @@
             overflow: hidden;
         }
 
-        /* Hero Slideshow Container */
-        .hero-slideshow {
+        /* Video Background (Desktop) */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        /* Image Fallback (Mobile) */
+        .hero-image-fallback {
+            display: none;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
             z-index: 0;
         }
 
-        /* Individual Slides */
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            animation: slideshow 18s infinite;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Stagger animation for each slide */
-        .hero-slide:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .hero-slide:nth-child(2) {
-            animation-delay: 6s;
-        }
-
-        .hero-slide:nth-child(3) {
-            animation-delay: 12s;
-        }
-
-        /* Slideshow animation - smooth fade */
-        @keyframes slideshow {
-            0% { opacity: 0; transform: scale(1); }
-            5% { opacity: 1; transform: scale(1); }
-            33.33% { opacity: 1; transform: scale(1.05); }
-            38.33% { opacity: 0; transform: scale(1.05); }
-            100% { opacity: 0; transform: scale(1); }
-        }
-
-        /* Overlay for all slides */
-        .hero-slide::before {
+        /* Dark Dramatic Overlay (Option B) */
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(44, 36, 22, 0.8), rgba(92, 64, 51, 0.7));
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(44, 44, 44, 0.4));
             z-index: 1;
         }
 
-        /* Pattern overlay */
-        .hero::before {
+        /* Subtle Gold Pattern Overlay */
+        .hero::after {
             content: '';
             position: absolute;
             top: 0;
@@ -255,8 +254,8 @@
                     90deg,
                     transparent,
                     transparent 2px,
-                    rgba(252, 221, 9, 0.05) 2px,
-                    rgba(252, 221, 9, 0.05) 4px
+                    rgba(247, 231, 206, 0.03) 2px,
+                    rgba(247, 231, 206, 0.03) 4px
                 );
             pointer-events: none;
             z-index: 1;
@@ -282,43 +281,45 @@
         }
 
         .hero h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 5rem;
-            font-weight: 700;
-            color: var(--ethiopian-yellow);
+            font-family: 'Pinyon Script', serif;
+            font-size: 10rem;
+            font-weight: 400;
+            color: var(--champagne-gold);
             margin-bottom: 1.5rem;
             letter-spacing: 2px;
-            text-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+            text-shadow: 3px 5px 15px rgba(0,0,0,0.7);
             line-height: 1.1;
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--cream);
+            color: var(--luxury-white);
             margin-bottom: 1rem;
             font-weight: 300;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
         .flag-line {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 0;
             margin: 1.5rem auto 2rem;
-            max-width: 300px;
-            height: 6px;
-            border-radius: 3px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            max-width: 60px;
+            height: 60px;
         }
 
-        .flag-line div {
-            flex: 1;
+        .flag-line::before {
+            content: 'â­';
+            font-size: 3rem;
+            color: var(--rich-gold);
+            filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.5));
         }
 
-        .flag-green { background: var(--ethiopian-green); }
-        .flag-yellow { background: var(--ethiopian-yellow); }
-        .flag-red { background: var(--ethiopian-red); }
+        .flag-green, .flag-yellow, .flag-red {
+            display: none;
+        }
 
         .hero-info {
             display: flex;
@@ -329,17 +330,18 @@
         }
 
         .info-item {
-            color: var(--cream);
+            color: var(--luxury-white);
             font-size: 1.1rem;
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
 
         .info-item::before {
-            content: '●';
-            color: var(--ethiopian-red);
-            font-size: 2rem;
+            content: 'â—';
+            color: var(--champagne-gold);
+            font-size: 1.5rem;
             line-height: 1;
         }
 
@@ -353,7 +355,7 @@
         .section-title {
             font-family: 'Merriweather', serif;
             font-size: 3.5rem;
-            color: var(--rich-brown);
+            color: var(--soft-black);
             margin-bottom: 1rem;
             text-align: center;
             font-weight: 700;
@@ -369,13 +371,14 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
+            background: linear-gradient(90deg, var(--rich-gold), var(--champagne-gold), var(--rich-gold));
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
-            color: var(--deep-earth);
+            color: var(--text-dark);
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
@@ -384,16 +387,16 @@
 
         /* Brand Intro */
         .brand-intro {
-            background: var(--off-white);
-            border-left: 5px solid var(--ethiopian-red);
-            border-right: 5px solid var(--ethiopian-green);
+            background: var(--luxury-white);
+            border-left: 5px solid var(--rich-gold);
+            border-right: 5px solid var(--champagne-gold);
             padding: 3rem;
             max-width: 900px;
             margin: 0 auto;
             font-size: 1.3rem;
             line-height: 1.9;
-            color: var(--rich-brown);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            color: var(--text-dark);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
             position: relative;
         }
 
@@ -404,7 +407,7 @@
             left: 5px;
             right: 5px;
             height: 5px;
-            background: var(--ethiopian-yellow);
+            background: linear-gradient(90deg, var(--champagne-gold), var(--rich-gold), var(--champagne-gold));
         }
 
         /* Featured Dishes */
@@ -416,24 +419,24 @@
         }
 
         .dish-card {
-            background: var(--off-white);
+            background: var(--luxury-white);
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.4s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-top: 4px solid var(--ethiopian-red);
+            box-shadow: 0 5px 20px rgba(44, 44, 44, 0.08);
+            border-top: 4px solid var(--rich-gold);
         }
 
         .dish-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(218, 18, 26, 0.25);
-            border-top-color: var(--ethiopian-green);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+            border-top-color: var(--champagne-gold);
         }
 
         .dish-image {
             width: 100%;
             height: 280px;
-            background: linear-gradient(135deg, var(--deep-earth), var(--burnt-sienna));
+            background: linear-gradient(135deg, var(--text-dark), var(--burnt-sienna));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -456,7 +459,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(218, 18, 26, 0.1), transparent);
+            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.1), transparent);
             pointer-events: none;
         }
 
@@ -467,13 +470,13 @@
         .dish-name {
             font-family: 'Merriweather', serif;
             font-size: 1.8rem;
-            color: var(--rich-brown);
+            color: var(--soft-black);
             margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
         .dish-desc {
-            color: var(--deep-earth);
+            color: var(--text-dark);
             font-size: 1.05rem;
             margin-bottom: 1.2rem;
             line-height: 1.6;
@@ -481,14 +484,14 @@
 
         .dish-price {
             font-size: 1.5rem;
-            color: var(--ethiopian-red);
+            color: var(--rich-gold);
             font-weight: 600;
         }
 
         /* What to Expect */
         .expect-section {
-            background: linear-gradient(135deg, var(--rich-brown), var(--deep-earth));
-            color: var(--cream);
+            background: linear-gradient(135deg, var(--soft-black), var(--text-dark));
+            color: var(--luxury-white);
             text-align: center;
             padding: 4rem 2rem;
             margin: 4rem 0;
@@ -515,7 +518,7 @@
         }
 
         .expect-section .section-title {
-            color: var(--ethiopian-yellow);
+            color: var(--champagne-gold);
             z-index: 2;
             position: relative;
         }
@@ -555,11 +558,11 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
+            background: linear-gradient(90deg, var(--deep-gold), var(--champagne-gold), var(--rich-gold));
         }
 
         .service-card:hover {
-            border-color: var(--ethiopian-red);
+            border-color: var(--rich-gold);
             transform: scale(1.05);
         }
 
@@ -571,13 +574,13 @@
         .service-title {
             font-family: 'Merriweather', serif;
             font-size: 1.5rem;
-            color: var(--rich-brown);
+            color: var(--soft-black);
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
         .service-desc {
-            color: var(--deep-earth);
+            color: var(--text-dark);
             font-size: 1rem;
         }
 
@@ -608,7 +611,7 @@
         }
 
         .gallery-item::before {
-            content: '🔍';
+            content: 'ðŸ”';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -626,7 +629,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(218, 18, 26, 0);
+            background: rgba(212, 175, 55, 0);
             transition: all 0.3s ease;
         }
 
@@ -635,7 +638,7 @@
         }
 
         .gallery-item:hover::after {
-            background: rgba(218, 18, 26, 0.4);
+            background: rgba(212, 175, 55, 0.4);
         }
 
         .gallery-item:hover img {
@@ -707,7 +710,7 @@
         }
 
         .lightbox-close:hover {
-            color: var(--ethiopian-red);
+            color: var(--rich-gold);
             transform: scale(1.2);
         }
 
@@ -729,7 +732,7 @@
 
         .lightbox-prev:hover,
         .lightbox-next:hover {
-            background: var(--ethiopian-red);
+            background: var(--rich-gold);
         }
 
         .lightbox-prev {
@@ -753,13 +756,13 @@
             padding: 3rem;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--ethiopian-red);
+            border-left: 4px solid var(--rich-gold);
         }
 
         .location-info h3 {
             font-family: 'Merriweather', serif;
             font-size: 1.8rem;
-            color: var(--rich-brown);
+            color: var(--soft-black);
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
@@ -767,14 +770,14 @@
         .location-detail {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            color: var(--deep-earth);
+            color: var(--text-dark);
             display: flex;
             align-items: flex-start;
             gap: 1rem;
         }
 
         .location-detail strong {
-            color: var(--rich-brown);
+            color: var(--soft-black);
             min-width: 120px;
         }
 
@@ -806,14 +809,14 @@
             border-radius: 8px;
             text-align: center;
             transition: all 0.3s ease;
-            border-top: 4px solid var(--ethiopian-green);
+            border-top: 4px solid var(--deep-gold);
         }
 
         .contact-card:hover {
-            background: var(--ethiopian-red);
+            background: var(--rich-gold);
             color: white;
             transform: translateY(-5px);
-            border-top-color: var(--ethiopian-yellow);
+            border-top-color: var(--champagne-gold);
         }
 
         .contact-card:hover h3,
@@ -826,11 +829,11 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
-            color: var(--rich-brown);
+            color: var(--soft-black);
         }
 
         .contact-card a {
-            color: var(--deep-earth);
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 600;
@@ -857,7 +860,7 @@
             background: white;
             padding: 2.5rem;
             border-radius: 8px;
-            border-left: 4px solid var(--ethiopian-red);
+            border-left: 4px solid var(--rich-gold);
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             position: relative;
         }
@@ -868,14 +871,14 @@
             top: -20px;
             left: 20px;
             font-size: 6rem;
-            color: var(--ethiopian-yellow);
+            color: var(--champagne-gold);
             font-family: Georgia, serif;
             opacity: 0.3;
         }
 
         .testimonial-text {
             font-size: 1.15rem;
-            color: var(--deep-earth);
+            color: var(--text-dark);
             font-style: italic;
             margin-bottom: 1.5rem;
             line-height: 1.7;
@@ -884,7 +887,7 @@
         }
 
         .testimonial-author {
-            color: var(--rich-brown);
+            color: var(--soft-black);
             font-weight: 600;
             font-size: 1.1rem;
         }
@@ -892,10 +895,10 @@
         /* Footer */
         footer {
             background: var(--charcoal);
-            color: var(--cream);
+            color: var(--luxury-white);
             padding: 3rem 2rem 1.5rem;
             border-top: 4px solid;
-            border-image: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red)) 1;
+            border-image: linear-gradient(90deg, var(--deep-gold), var(--champagne-gold), var(--rich-gold)) 1;
         }
 
         .footer-content {
@@ -909,20 +912,20 @@
 
         .footer-section h4 {
             font-family: 'Merriweather', serif;
-            color: var(--ethiopian-yellow);
+            color: var(--champagne-gold);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         .footer-section p, .footer-section a {
-            color: var(--cream);
+            color: var(--luxury-white);
             text-decoration: none;
             line-height: 2;
             font-size: 1.05rem;
         }
 
         .footer-section a:hover {
-            color: var(--ethiopian-red);
+            color: var(--rich-gold);
         }
 
         .social-links {
@@ -938,14 +941,14 @@
 
         .social-links a:hover {
             transform: scale(1.2);
-            color: var(--ethiopian-yellow);
+            color: var(--champagne-gold);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(252, 221, 9, 0.3);
-            color: var(--ethiopian-yellow);
+            color: var(--champagne-gold);
         }
 
         /* Responsive */
@@ -964,9 +967,13 @@
                 display: block;
             }
 
-            /* Disable parallax on mobile for better performance */
-            .hero-slide {
-                background-attachment: scroll;
+            /* Hide video on mobile, show image fallback for bandwidth */
+            .hero-video {
+                display: none;
+            }
+            
+            .hero-image-fallback {
+                display: block;
             }
 
             nav {
@@ -979,13 +986,13 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(44, 36, 22, 0.98);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 gap: 0;
                 padding: 1rem 0;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                border-top: 3px solid var(--ethiopian-red);
+                border-top: 2px solid var(--champagne-gold);
                 z-index: 100;
             }
 
@@ -1003,7 +1010,7 @@
             nav ul li a {
                 padding: 1.2rem 2rem;
                 width: 100%;
-                border-bottom: 1px solid rgba(252, 221, 9, 0.15);
+                border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             }
 
             nav ul li:last-child a {
@@ -1015,20 +1022,24 @@
             }
 
             nav a:hover {
-                background: rgba(218, 18, 26, 0.2);
+                background: rgba(212, 175, 55, 0.2);
             }
 
             .cta-btn {
                 margin: 0.5rem 0 !important;
-                background: var(--ethiopian-red) !important;
+                background: var(--rich-gold) !important;
             }
 
             .cta-btn:hover {
-                background: var(--ethiopian-green) !important;
+                background: var(--deep-gold) !important;
             }
 
             .logo {
                 font-size: 1.5rem;
+            }
+
+            .logo-image {
+                height: 40px;  /* Smaller on mobile */
             }
 
             .hero {
@@ -1172,6 +1183,10 @@
         }
 
         @media (max-width: 480px) {
+            .logo-image {
+                height: 35px;  /* Even smaller on small phones */
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -1231,14 +1246,15 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">Orbit Hotel</a>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+            <a href="#home" class="logo">
+                <img src="images/logo.png" alt="Orbit Hotel Logo" class="logo-image">
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">â˜°</button>
             <ul id="mobileMenu">
                 <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
                 <li><a href="#menu" onclick="closeMobileMenu()">Menu</a></li>
                 <li><a href="#rooms" onclick="closeMobileMenu()">Rooms</a></li>
                 <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
-                <li><a href="#about" onclick="closeMobileMenu()">Our Story</a></li>
                 <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
                 <li><a href="#menu" class="cta-btn" onclick="closeMobileMenu()">View Menu</a></li>
             </ul>
@@ -1247,24 +1263,23 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Hero Slideshow Background -->
-        <div class="hero-slideshow">
-            <div class="hero-slide" style="background-image: url('images/hero/hero-1.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/hero/hero-2.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/hero/hero-3.jpg');"></div>
-        </div>
+        <!-- Video Background (Desktop) -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="images/hero-video.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Image Fallback (Mobile) -->
+        <img src="images/hero-fallback.jpg" alt="Orbit Hotel" class="hero-image-fallback">
 
         <!-- Hero Content (stays on top) -->
         <div class="hero-content">
             <h1>Orbit Hotel</h1>
             <p class="hero-subtitle">The hotel of hospitality</p>
             <div class="flag-line">
-                <div class="flag-green"></div>
-                <div class="flag-yellow"></div>
-                <div class="flag-red"></div>
+                <!-- Gold Ethiopian Star -->
             </div>
             <div class="hero-info">
-                <div class="info-item">2 Minutes from Dire Dawa Airport</div>
+                <div class="info-item zoom-icon">2 Minutes from Airport</div>
                 <div class="info-item">Daily 09AM - 10PM</div>
             </div>
             <div style="margin-top: 2.5rem;">
@@ -1314,7 +1329,7 @@
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Tibs</h3>
-                    <p class="dish-desc">Sautéed beef or lamb with onions, peppers, and aromatic Ethiopian spices</p>
+                    <p class="dish-desc">SautÃ©ed beef or lamb with onions, peppers, and aromatic Ethiopian spices</p>
                     <p class="dish-price">ETB 400</p>
                 </div>
             </div>
@@ -1332,12 +1347,12 @@
 
             <div class="dish-card">
                 <div class="dish-image">
-                    <img src="images/dishes/Bariis-iskukaris.jpg" alt="Sambusa" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/dishes/Bariis-iskukaris.jpg" alt="Bariis-iskukaris" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Bariis-iskukaris</h3>
                     <p class="dish-desc">Fragrant Somali spiced rice with tender meat, raisins, and caramelized onions—bold, aromatic, unforgettable.</p>
-                    <p class="dish-price">ETB 500</p>
+                    <p class="dish-price">ETB 100</p>
                 </div>
             </div>
 
@@ -1354,7 +1369,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="#" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;">Download Full Menu (PDF)</a>
+            <a href="menu/orbit-hotel-menu.pdf" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;" target="_blank" rel="noopener noreferrer">Download Full Menu (PDF)</a>
         </div>
     </section>
 
@@ -1362,39 +1377,38 @@
     <div class="expect-section">
         <h2 class="section-title">Delightful Dining and Living</h2>
         <div class="expect-content">
-            Experience the warmth of Ethiopian hospitality in our authentic dining space. We go the extra mile to ensure you get top-notch meals, an extraordinary space, and peaceful away-from-home living experience. Serving you the best of Ethiopian, Somali, African, and Continental servings that delight your taste buds and leave you filled. Whether you're new to Ethiopian cuisine or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration.
+             Experience the warmth of Ethiopian hospitality in our authentic dining space. We go the extra mile to ensure you get top-notch meals, an extraordinary space, and peaceful away-from-home living experience. Serving you the best of Ethiopian, Somali, African, and Continental servings that delight your taste buds and leave you filled. Whether you're new to Ethiopian cuisine or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration.
         </div>
     </div>
 
     <!-- Services -->
     <section class="pattern-bg">
         <h2 class="section-title">How We Serve You</h2>
-        <p class="section-subtitle">Bringing Premium Experiences to Dire Dawa</p>
+        <p class="section-subtitle">Bringing Ethiopian traditions to Dire Dawa</p>
         
         <div class="services-grid">
-            
+    
 
             <div class="service-card">
-                <div class="service-icon">🛏️</div>
+                <div class="service-icon">ðŸ›ï¸</div>
                 <h3 class="service-title">Comfortable Rooms</h3>
                 <p class="service-desc">Clean, modern rooms just 2 minutes from the airport. Perfect for travelers and business guests.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">📦</div>
+                <div class="service-icon">ðŸ“¦</div>
                 <h3 class="service-title">Takeaway & Delivery</h3>
                 <p class="service-desc">Enjoy our authentic flavors at home with our convenient takeaway and delivery options.</p>
             </div>
 
-            
             <div class="service-card">
-                <div class="service-icon">🚗</div>
+                <div class="service-icon">ðŸš—</div>
                 <h3 class="service-title">Airport Proximity</h3>
                 <p class="service-desc">Just 2 minutes from Dire Dawa Airport. Ideal for early flights or late arrivals.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">🎉</div>
+                <div class="service-icon">ðŸŽ‰</div>
                 <h3 class="service-title">Private Events</h3>
                 <p class="service-desc">Host your celebrations with us and share the joy of Ethiopian cuisine with loved ones.</p>
             </div>
@@ -1406,8 +1420,8 @@
         <h2 class="section-title">Rooms & Accommodation</h2>
         <p class="section-subtitle">Comfortable stays just minutes from the airport</p>
 
-        <div style="background: var(--off-white); padding: 3rem; border-radius: 8px; max-width: 900px; margin: 0 auto 4rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-left: 5px solid var(--ethiopian-green); border-right: 5px solid var(--ethiopian-red);">
-            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--rich-brown); text-align: center;">
+        <div style="background: var(--off-white); padding: 3rem; border-radius: 8px; max-width: 900px; margin: 0 auto 4rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-left: 5px solid var(--deep-gold); border-right: 5px solid var(--rich-gold);">
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--soft-black); text-align: center;">
                 After a long flight or between adventures, rest in our clean, comfortable rooms designed for the modern traveler. Each room features essential amenities and authentic Ethiopian touches, making you feel at home while away from home.
             </p>
         </div>
@@ -1416,7 +1430,7 @@
             <div class="dish-card">
                 <div class="dish-image" onclick="openRoomLightbox(0)" style="cursor: pointer; position: relative;">
                     <img src="images/rooms/standard-room.jpg" alt="Standard Room" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">ðŸ”</div>
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Standard Room</h3>
@@ -1428,7 +1442,7 @@
             <div class="dish-card">
                 <div class="dish-image" onclick="openRoomLightbox(1)" style="cursor: pointer; position: relative;">
                     <img src="images/rooms/double-room.jpg" alt="Double Room" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">ðŸ”</div>
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Double Room</h3>
@@ -1440,7 +1454,7 @@
             <div class="dish-card">
                 <div class="dish-image" onclick="openRoomLightbox(2)" style="cursor: pointer; position: relative;">
                     <img src="images/rooms/suite.jpg" alt="Suite" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">ðŸ”</div>
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Deluxe Suite</h3>
@@ -1450,57 +1464,57 @@
             </div>
         </div>
 
-        <div style="background: linear-gradient(135deg, var(--ethiopian-green), var(--deep-earth)); color: var(--cream); padding: 3rem 2rem; border-radius: 8px; margin-bottom: 3rem;">
-            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--ethiopian-yellow);">Room Amenities</h3>
+        <div style="background: linear-gradient(135deg, var(--deep-gold), var(--text-dark)); color: var(--luxury-white); padding: 3rem 2rem; border-radius: 8px; margin-bottom: 3rem;">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--champagne-gold);">Room Amenities</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📶</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸ“¶</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Free WiFi</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">High-speed internet in all rooms</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">❄️</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">â„ï¸</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Air Conditioning</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Climate control for comfort</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚿</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸš¿</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Private Bathroom</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Hot water & toiletries</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📺</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸ“º</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Flat-Screen TV</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Cable channels available</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🍳</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸ³</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Breakfast Included</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Traditional Ethiopian breakfast</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚗</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸš—</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Airport Shuttle</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Pickup & drop-off arrangedon request</p>
+                    <p style="font-size: 1rem; opacity: 0.9;">Free transport on request</p>
                 </div>
             </div>
         </div>
 
         <div style="text-align: center; background: var(--off-white); padding: 3rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; color: var(--rich-brown); margin-bottom: 1rem;">Ready to Book Your Stay?</h3>
-            <p style="font-size: 1.2rem; color: var(--deep-earth); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; color: var(--soft-black); margin-bottom: 1rem;">Ready to Book Your Stay?</h3>
+            <p style="font-size: 1.2rem; color: var(--text-dark); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Contact us directly to reserve your room. We're here to make your stay in Dire Dawa comfortable and memorable.
             </p>
             <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:+251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; text-decoration: none;">📞 Call to Book</a>
-                <a href="https://wa.me/251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; background: var(--ethiopian-green); text-decoration: none;">💬 WhatsApp Us</a>
+                <a href="tel:+251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; text-decoration: none;">Call to Book</a>
+                <a href="https://wa.me/251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; background: var(--deep-gold); text-decoration: none;" target="_blank" rel="noopener noreferrer">ðŸ’¬ WhatsApp Us</a>
             </div>
         </div>
     </section>
 
     <!-- Gallery -->
     <section id="gallery">
-        <h2 class="section-title">A Taste of Orbit Hotel</h2>
+        <h2 class="section-title">A Taste of Ethiopia</h2>
         <p class="section-subtitle">Click any photo to view it larger</p>
         
         <div class="gallery-grid">
@@ -1517,15 +1531,15 @@
                 <img src="images/gallery/kitchen.jpg" alt="Kitchen">
             </div>
             <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/gallery/seating1.jpg" alt="Hotel dining seating area">
+                <img src="images/gallery/seating1.jpg" alt="Our seating design">
             </div>
-            <div class="gallery-item" onclick="openLightbox(5)">
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="images/gallery/serving.jpg" alt="Our servings">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
                 <img src="images/gallery/serving2.jpg" alt="Our servings">
             </div>
-            <div class="gallery-item" onclick="openLightbox(5)">
-                <img src="images/gallery/serving2.jpg" alt="Our servings">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5)">
+            <div class="gallery-item" onclick="openLightbox(4)">
                 <img src="images/gallery/serving3.jpg" alt="Our servings">
             </div>
         </div>
@@ -1548,17 +1562,17 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <p class="testimonial-text">The most authentic Ethiopian food I've had outside of Addis Ababa! The injera is perfect and the doro wat reminds me of home. The rooms are spotless and comfortable. A must-visit for anyone traveling through Dire Dawa.</p>
-                <p class="testimonial-author">— Tigist Alemayehu</p>
+                <p class="testimonial-author">â€” Tigist Alemayehu</p>
             </div>
 
             <div class="testimonial-card">
                 <p class="testimonial-text">My first experience with Ethiopian food and I'm hooked! The staff was patient in explaining everything, and the communal dining experience was so warm and welcoming. The hotel is conveniently located - I'll definitely stay here on my next visit!</p>
-                <p class="testimonial-author">— Abebe Bekele</p>
+                <p class="testimonial-author">â€” Abebe Bekele</p>
             </div>
 
             <div class="testimonial-card">
                 <p class="testimonial-text">Perfect for business travelers! The coffee ceremony alone is worth the visit, and being so close to the airport made my early morning flight stress-free. The vegetarian platter is incredible. Highly recommend!</p>
-                <p class="testimonial-author">— Hiwot Mekonnen</p>
+                <p class="testimonial-author">â€” Hiwot Mekonnen</p>
             </div>
         </div>
     </div>
@@ -1579,7 +1593,7 @@
 
                 <div class="location-detail">
                     <strong>Hours:</strong>
-                    <span>Daily<br>09:00 AM - 10:00 PM</span>
+                    <span>Daily<br>11:00 AM - 10:00 PM</span>
                 </div>
 
                 <div class="location-detail">
@@ -1612,28 +1626,27 @@
         
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>📞 Phone</h3>
+                <h3>ðŸ“ž Phone</h3>
                 <a href="tel:+251912345678">+251 91 234 5678</a>
             </div>
 
             <div class="contact-card">
-                <h3>💬 WhatsApp</h3>
-                <a href="https://wa.me/251912345678">+251 91 234 5678</a>
+                <h3>ðŸ’¬ WhatsApp</h3>
+                <a href="https://wa.me/251912345678" target="_blank" rel="noopener noreferrer">+251 91 234 5678</a>
             </div>
 
             <div class="contact-card">
-                <h3>✉️ Email</h3>
-                <a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a>
+                <h3>âœ‰ï¸ Email</h3>
+                <a href="hello@orbit-hotel.com">hello@orbit-hotel.com</span></a>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <h3 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
             <div class="social-links" style="justify-content: center;">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer">ðŸ“¸</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">ðŸ‘</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">ðŸ¦</a>
             </div>
         </div>
     </section>
@@ -1659,7 +1672,7 @@
                 <h4>Contact</h4>
                 <p>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia</p>
                 <p>+251 91 234 5678</p>
-                <p>hello@orbit-hotel.com</p>
+                <p><a href="hello@orbit-hotel.com"> hello@orbit-hotel.com </a></p>
             </div>
         </div>
 
@@ -1668,7 +1681,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -1692,14 +1705,12 @@
 
         // Lightbox Gallery
         const galleryImages = [
-            'images/gallery/ambience.jpg',
-            'images/gallery/dining-area.jpg',
+            'images/gallery/food-platter.jpg',
+            'images/gallery/coffee-ceremony.jpg',
             'images/gallery/interior.jpg',
-            'images/gallery/kitchen.jpg',
-            'images/gallery/seating1.jpg',
-            'images/gallery/serving.jpg',
-            'images/gallery/serving2.jpg',
-            'images/gallery/serving3.jpg',
+            'images/gallery/injera-making.jpg',
+            'images/gallery/dining-scene.jpg',
+            'images/gallery/spices.jpg'
         ];
 
         const roomImages = [
@@ -1758,16 +1769,4 @@
         // Keyboard navigation for lightbox
         document.addEventListener('keydown', function(event) {
             const modal = document.getElementById('lightboxModal');
-            if (modal.classList.contains('active')) {
-                if (event.key === 'Escape') {
-                    closeLightbox(event);
-                } else if (event.key === 'ArrowLeft') {
-                    changeImage(-1, event);
-                } else if (event.key === 'ArrowRight') {
-                    changeImage(1, event);
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+            if (modal.classList.contains('ac
