@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbit Hotel | Ethiopian Restaurant & Hotel in Dire Dawa | Near Airport</title>
+    <title>The hotel of hospitality</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -13,9 +13,6 @@
     <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Luxury White & Champagne Gold Color Palette */
@@ -281,9 +278,9 @@
         }
 
         .hero h1 {
-            font-family: 'Pinyon Script', serif;
-            font-size: 10rem;
-            font-weight: 400;
+            font-family: 'Merriweather', serif;
+            font-size: 5rem;
+            font-weight: 700;
             color: var(--champagne-gold);
             margin-bottom: 1.5rem;
             letter-spacing: 2px;
@@ -311,7 +308,7 @@
         }
 
         .flag-line::before {
-            content: 'â­';
+            content: '⭐';
             font-size: 3rem;
             color: var(--rich-gold);
             filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.5));
@@ -339,7 +336,7 @@
         }
 
         .info-item::before {
-            content: 'â—';
+            content: '●';
             color: var(--champagne-gold);
             font-size: 1.5rem;
             line-height: 1;
@@ -569,6 +566,10 @@
         .service-icon {
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            line-height: 1;
+            filter: grayscale(0%);
+            /* Ensure emojis display properly */
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
         }
 
         .service-title {
@@ -611,7 +612,7 @@
         }
 
         .gallery-item::before {
-            content: 'ðŸ”';
+            content: '🔍';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -825,7 +826,7 @@
         }
 
         .contact-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", 'Merriweather', serif;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
@@ -1249,12 +1250,13 @@
             <a href="#home" class="logo">
                 <img src="images/logo.png" alt="Orbit Hotel Logo" class="logo-image">
             </a>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">â˜°</button>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
             <ul id="mobileMenu">
                 <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
                 <li><a href="#menu" onclick="closeMobileMenu()">Menu</a></li>
                 <li><a href="#rooms" onclick="closeMobileMenu()">Rooms</a></li>
                 <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">Our Story</a></li>
                 <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
                 <li><a href="#menu" class="cta-btn" onclick="closeMobileMenu()">View Menu</a></li>
             </ul>
@@ -1262,15 +1264,11 @@
     </header>
 
     <!-- Hero Section -->
+        <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Video Background (Desktop) -->
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="images/hero-video.mp4" type="video/mp4">
-        </video>
+        <!-- Hero Background Image -->
+        <img src="images/hero.jpg" alt="Orbit Hotel" class="hero-image-fallback" style="display: block;">
         
-        <!-- Image Fallback (Mobile) -->
-        <img src="images/hero-fallback.jpg" alt="Orbit Hotel" class="hero-image-fallback">
-
         <!-- Hero Content (stays on top) -->
         <div class="hero-content">
             <h1>Orbit Hotel</h1>
@@ -1279,7 +1277,7 @@
                 <!-- Gold Ethiopian Star -->
             </div>
             <div class="hero-info">
-                <div class="info-item zoom-icon">2 Minutes from Airport</div>
+                <div class="info-item">2 Minutes from Airport</div>
                 <div class="info-item">Daily 09AM - 10PM</div>
             </div>
             <div style="margin-top: 2.5rem;">
@@ -1287,7 +1285,6 @@
             </div>
         </div>
     </section>
-
     <!-- Brand Intro -->
     <section class="pattern-bg" style="padding-top: 6rem;">
         <div class="brand-intro">
@@ -1329,7 +1326,7 @@
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Tibs</h3>
-                    <p class="dish-desc">SautÃ©ed beef or lamb with onions, peppers, and aromatic Ethiopian spices</p>
+                    <p class="dish-desc">Sautéed beef or lamb with onions, peppers, and aromatic Ethiopian spices</p>
                     <p class="dish-price">ETB 400</p>
                 </div>
             </div>
@@ -1377,7 +1374,7 @@
     <div class="expect-section">
         <h2 class="section-title">Delightful Dining and Living</h2>
         <div class="expect-content">
-             Experience the warmth of Ethiopian hospitality in our authentic dining space. We go the extra mile to ensure you get top-notch meals, an extraordinary space, and peaceful away-from-home living experience. Serving you the best of Ethiopian, Somali, African, and Continental servings that delight your taste buds and leave you filled. Whether you're new to Ethiopian cuisine or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration.
+            Experience the warmth of Ethiopian hospitality in our authentic dining space. We go the extra mile to ensure you get top-notch meals, an extraordinary space, and peaceful away-from-home living experience. Serving you the best of Ethiopian, Somali, African, and Continental servings that delight your taste buds and leave you filled. Whether you're new to Ethiopian cuisine or a longtime enthusiast, our friendly staff will guide you through the flavors and traditions that make every meal a cultural celebration.
         </div>
     </div>
 
@@ -1387,28 +1384,27 @@
         <p class="section-subtitle">Bringing Ethiopian traditions to Dire Dawa</p>
         
         <div class="services-grid">
-    
 
             <div class="service-card">
-                <div class="service-icon">ðŸ›ï¸</div>
+                <div class="service-icon">🛏️</div>
                 <h3 class="service-title">Comfortable Rooms</h3>
                 <p class="service-desc">Clean, modern rooms just 2 minutes from the airport. Perfect for travelers and business guests.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">ðŸ“¦</div>
+                <div class="service-icon">📦</div>
                 <h3 class="service-title">Takeaway & Delivery</h3>
                 <p class="service-desc">Enjoy our authentic flavors at home with our convenient takeaway and delivery options.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">ðŸš—</div>
+                <div class="service-icon">🚗</div>
                 <h3 class="service-title">Airport Proximity</h3>
                 <p class="service-desc">Just 2 minutes from Dire Dawa Airport. Ideal for early flights or late arrivals.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">ðŸŽ‰</div>
+                <div class="service-icon">🎉</div>
                 <h3 class="service-title">Private Events</h3>
                 <p class="service-desc">Host your celebrations with us and share the joy of Ethiopian cuisine with loved ones.</p>
             </div>
@@ -1430,7 +1426,7 @@
             <div class="dish-card">
                 <div class="dish-image" onclick="openRoomLightbox(0)" style="cursor: pointer; position: relative;">
                     <img src="images/rooms/standard-room.jpg" alt="Standard Room" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">ðŸ”</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Standard Room</h3>
@@ -1442,7 +1438,7 @@
             <div class="dish-card">
                 <div class="dish-image" onclick="openRoomLightbox(1)" style="cursor: pointer; position: relative;">
                     <img src="images/rooms/double-room.jpg" alt="Double Room" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">ðŸ”</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Double Room</h3>
@@ -1454,7 +1450,7 @@
             <div class="dish-card">
                 <div class="dish-image" onclick="openRoomLightbox(2)" style="cursor: pointer; position: relative;">
                     <img src="images/rooms/suite.jpg" alt="Suite" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">ðŸ”</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
                 </div>
                 <div class="dish-info">
                     <h3 class="dish-name">Deluxe Suite</h3>
@@ -1468,32 +1464,32 @@
             <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--champagne-gold);">Room Amenities</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸ“¶</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📶</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Free WiFi</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">High-speed internet in all rooms</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">â„ï¸</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">❄️</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Air Conditioning</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Climate control for comfort</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸš¿</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚿</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Private Bathroom</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Hot water & toiletries</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸ“º</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📺</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Flat-Screen TV</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Cable channels available</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸ³</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🍳</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Breakfast Included</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Traditional Ethiopian breakfast</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸš—</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚗</div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Airport Shuttle</h4>
                     <p style="font-size: 1rem; opacity: 0.9;">Free transport on request</p>
                 </div>
@@ -1506,15 +1502,15 @@
                 Contact us directly to reserve your room. We're here to make your stay in Dire Dawa comfortable and memorable.
             </p>
             <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:+251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; text-decoration: none;">Call to Book</a>
-                <a href="https://wa.me/251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; background: var(--deep-gold); text-decoration: none;" target="_blank" rel="noopener noreferrer">ðŸ’¬ WhatsApp Us</a>
+                <a href="tel:+251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; text-decoration: none;">📞 Call to Book</a>
+                <a href="https://wa.me/251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; background: var(--deep-gold); text-decoration: none;" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
             </div>
         </div>
     </section>
 
     <!-- Gallery -->
     <section id="gallery">
-        <h2 class="section-title">A Taste of Ethiopia</h2>
+        <h2 class="section-title">A Taste of Orbit Hotel</h2>
         <p class="section-subtitle">Click any photo to view it larger</p>
         
         <div class="gallery-grid">
@@ -1522,25 +1518,25 @@
                 <img src="images/gallery/ambience.jpg" alt="Hotel Ambience feel">
             </div>
             <div class="gallery-item" onclick="openLightbox(1)">
-                <img src="images/gallery/dining-area.jpg" alt="Dining area">
+                <img src="images/gallery/dining-area.jpg" alt="dining area">
             </div>
             <div class="gallery-item" onclick="openLightbox(2)">
                 <img src="images/gallery/interior.jpg" alt="Restaurant interior">
             </div>
             <div class="gallery-item" onclick="openLightbox(3)">
-                <img src="images/gallery/kitchen.jpg" alt="Kitchen">
+                <img src="images/gallery/kitchen.jpg" alt="cooking area">
             </div>
             <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/gallery/seating1.jpg" alt="Our seating design">
+                <img src="images/gallery/seating1.jpg" alt="seating area">
             </div>
-            <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/gallery/serving.jpg" alt="Our servings">
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="images/gallery/serving.jpg" alt="servings">
             </div>
-            <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/gallery/serving2.jpg" alt="Our servings">
+            <div class="gallery-item" onclick="openLightbox(6)">
+                <img src="images/gallery/serving2.jpg" alt="servings">
             </div>
-            <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/gallery/serving3.jpg" alt="Our servings">
+            <div class="gallery-item" onclick="openLightbox(7)">
+                <img src="images/gallery/serving3.jpg" alt="servings">
             </div>
         </div>
     </section>
@@ -1562,17 +1558,17 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <p class="testimonial-text">The most authentic Ethiopian food I've had outside of Addis Ababa! The injera is perfect and the doro wat reminds me of home. The rooms are spotless and comfortable. A must-visit for anyone traveling through Dire Dawa.</p>
-                <p class="testimonial-author">â€” Tigist Alemayehu</p>
+                <p class="testimonial-author">— Tigist Alemayehu</p>
             </div>
 
             <div class="testimonial-card">
                 <p class="testimonial-text">My first experience with Ethiopian food and I'm hooked! The staff was patient in explaining everything, and the communal dining experience was so warm and welcoming. The hotel is conveniently located - I'll definitely stay here on my next visit!</p>
-                <p class="testimonial-author">â€” Abebe Bekele</p>
+                <p class="testimonial-author">— Abebe Bekele</p>
             </div>
 
             <div class="testimonial-card">
                 <p class="testimonial-text">Perfect for business travelers! The coffee ceremony alone is worth the visit, and being so close to the airport made my early morning flight stress-free. The vegetarian platter is incredible. Highly recommend!</p>
-                <p class="testimonial-author">â€” Hiwot Mekonnen</p>
+                <p class="testimonial-author">— Hiwot Mekonnen</p>
             </div>
         </div>
     </div>
@@ -1626,27 +1622,27 @@
         
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>ðŸ“ž Phone</h3>
+                <h3>📞 Phone</h3>
                 <a href="tel:+251912345678">+251 91 234 5678</a>
             </div>
 
             <div class="contact-card">
-                <h3>ðŸ’¬ WhatsApp</h3>
+                <h3>💬 WhatsApp</h3>
                 <a href="https://wa.me/251912345678" target="_blank" rel="noopener noreferrer">+251 91 234 5678</a>
             </div>
 
             <div class="contact-card">
-                <h3>âœ‰ï¸ Email</h3>
-                <a href="hello@orbit-hotel.com">hello@orbit-hotel.com</span></a>
+                <h3>✉️ Email</h3>
+                <a href= hello@orbit-hotel.com> <span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa0bdada6bbe2a7a0bbaaa3e1aca0a2">[email&#160;protected]</span></a>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
             <h3 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
             <div class="social-links" style="justify-content: center;">
-                <a href="#" target="_blank" rel="noopener noreferrer">ðŸ“¸</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">ðŸ‘</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">ðŸ¦</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">📸</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">👍</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">🐦</a>
             </div>
         </div>
     </section>
@@ -1672,7 +1668,7 @@
                 <h4>Contact</h4>
                 <p>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia</p>
                 <p>+251 91 234 5678</p>
-                <p><a href="hello@orbit-hotel.com"> hello@orbit-hotel.com </a></p>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86eee3eaeae9c6e9f4e4eff2abeee9f2e3eaa8e5e9eb">[email&#160;protected]</a></p>
             </div>
         </div>
 
@@ -1704,13 +1700,15 @@
         });
 
         // Lightbox Gallery
-        const galleryImages = [
-            'images/gallery/food-platter.jpg',
-            'images/gallery/coffee-ceremony.jpg',
+            const galleryImages = [
+            'images/gallery/ambience.jpg',
+            'images/gallery/dining-area.jpg',
             'images/gallery/interior.jpg',
-            'images/gallery/injera-making.jpg',
-            'images/gallery/dining-scene.jpg',
-            'images/gallery/spices.jpg'
+            'images/gallery/kitchen.jpg',
+            'images/gallery/seating1.jpg',
+            'images/gallery/serving.jpg',
+            'images/gallery/serving2.jpg',
+            'images/gallery/serving3.jpg'
         ];
 
         const roomImages = [
@@ -1769,4 +1767,16 @@
         // Keyboard navigation for lightbox
         document.addEventListener('keydown', function(event) {
             const modal = document.getElementById('lightboxModal');
-            if (modal.classList.contains('ac
+            if (modal.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    closeLightbox(event);
+                } else if (event.key === 'ArrowLeft') {
+                    changeImage(-1, event);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1, event);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
