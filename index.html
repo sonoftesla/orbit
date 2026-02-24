@@ -12,6 +12,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -34,7 +36,67 @@
             padding: 0;
             box-sizing: border-box;
         }
+        /* Hero Carousel */
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
 
+        .hero-swiper .swiper-slide {
+            height: 100vh;
+            position: relative;
+        }
+
+        .hero-swiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Navigation Arrows */
+        .hero-swiper .swiper-button-prev,
+        .hero-swiper .swiper-button-next {
+            color: var(--champagne-gold);
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.6);
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .hero-swiper .swiper-button-prev:hover,
+        .hero-swiper .swiper-button-next:hover {
+            background: var(--rich-gold);
+        }
+
+        /* Pagination Dots */
+        .hero-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.6);
+            width: 12px;
+            height: 12px;
+        }
+
+        .hero-swiper .swiper-pagination-bullet-active {
+            background: var(--champagne-gold);
+        }
+
+        .hero-swiper .swiper-pagination {
+            bottom: 30px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .hero-swiper .swiper-button-prev,
+            .hero-swiper .swiper-button-next {
+                width: 40px;
+                height: 40px;
+            }
+        }
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
@@ -1288,19 +1350,32 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-        <!-- Hero Section -->
+        <!-- Hero Section with Carousel -->
     <section id="home" class="hero">
-        <!-- Hero Background Image -->
-        <img src="images/hero.jpg" alt="Orbit Hotel" class="hero-image-fallback" style="display: block;">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/hero-1.jpg" alt="Orbit Hotel Dining">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/hero-2.jpg" alt="Orbit Hotel Rooms">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/hero-3.jpg" alt="Orbit Hotel Ambience">
+                </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination"></div>
+        </div>
         
-        <!-- Hero Content (stays on top) -->
+        <!-- Hero Content (overlays carousel) -->
         <div class="hero-content">
             <h1>Orbit Hotel</h1>
             <p class="hero-subtitle">The hotel of hospitality</p>
-            <div class="flag-line">
-                <!-- Gold Ethiopian Star -->
-            </div>
+            <div class="flag-line"></div>
             <div class="hero-info">
                 <div class="info-item">2 Minutes from Airport</div>
                 <div class="info-item">Daily 09AM - 10PM</div>
@@ -1802,6 +1877,27 @@
                     changeImage(1, event);
                 }
             }
+        });
+                // Hero Carousel
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.hero-swiper .swiper-button-next',
+                prevEl: '.hero-swiper .swiper-button-prev',
+            },
+            pagination: {
+                el: '.hero-swiper .swiper-pagination',
+                clickable: true,
+            },
+            speed: 800,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true,
+            },
         });
     </script>
 </body>
