@@ -98,6 +98,10 @@
                 width: 40px;
                 height: 40px;
             }
+
+            #video-experience {
+                padding: 3rem 1.5rem !important;
+            }
         }
         body {
             font-family: 'Montserrat', sans-serif;
@@ -414,7 +418,7 @@
 
         /* Section Styling */
         section {
-            padding: 4rem 2rem; /* Reduced from 5rem - tighter, more modern */
+            padding: 4rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -663,7 +667,7 @@
             margin-bottom: 1rem;
             font-weight: 700;
             line-height: 1.3;
-            min-height: 2.6rem; /* Ensures consistent height */
+            min-height: 2.6rem;
         }
 
         .room-desc {
@@ -671,7 +675,7 @@
             font-size: 1.05rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
-            min-height: 5.1rem; /* About 3 lines of text */
+            min-height: 5.1rem;
         }
 
         .room-features {
@@ -679,7 +683,7 @@
             flex-wrap: wrap;
             gap: 0.8rem;
             margin-bottom: 1.5rem;
-            min-height: 4rem; /* Ensures consistent feature area */
+            min-height: 4rem;
         }
 
         .room-feature {
@@ -703,7 +707,7 @@
             align-items: center;
             padding-top: 1.5rem;
             border-top: 2px solid var(--medium-gray);
-            margin-top: auto; /* Pushes to bottom */
+            margin-top: auto;
         }
 
         .room-price {
@@ -766,6 +770,116 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-video {
+                display: none;
+            }
+            
+            .hero-image-fallback {
+                display: block;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                border-top: 2px solid var(--champagne-gold);
+                z-index: 100;
+            }
+
+            nav ul.mobile-open {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 1.2rem 2rem;
+                width: 100%;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            }
+
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:hover {
+                background: rgba(212, 175, 55, 0.2);
+            }
+
+            .cta-btn {
+                margin: 0.5rem 0 !important;
+                background: var(--rich-gold) !important;
+            }
+
+            .cta-btn:hover {
+                background: var(--deep-gold) !important;
+            }
+
+            .logo {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                transition: all 0.3s ease;
+            }
+
+            .logo:hover {
+                opacity: 0.8;
+            }
+
+            .logo-image {
+                height: 50px;
+                width: auto;
+                display: block;
+                object-fit: contain;
+            }
+
+            .logo-image {
+                height: 40px;
+            }
+
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -784,16 +898,16 @@
 
             .room-name {
                 font-size: 1.6rem;
-                min-height: auto; /* Remove fixed height on mobile */
+                min-height: auto;
             }
 
             .room-desc {
                 font-size: 1rem;
-                min-height: auto; /* Remove fixed height on mobile */
+                min-height: auto;
             }
 
             .room-features {
-                min-height: auto; /* Remove fixed height on mobile */
+                min-height: auto;
             }
 
             .room-price {
@@ -810,6 +924,185 @@
                 width: 100%;
                 min-width: auto;
                 padding: 1rem 1.8rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            section:first-of-type {
+                padding-top: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title::after {
+                width: 80px;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .brand-intro {
+                padding: 2rem;
+                font-size: 1.1rem;
+            }
+
+            .flag-line {
+                max-width: 250px;
+                height: 5px;
+            }
+
+            .dishes-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .dish-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .expect-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .expect-content {
+                font-size: 1.1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .location-info {
+                padding: 2rem;
+            }
+
+            .map-container {
+                min-height: 300px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .testimonials {
+                padding: 3rem 1.5rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .cta-btn {
+                display: block !important;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-close {
+                font-size: 2.5rem;
+                top: -35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo span {
+                font-size: 1rem !important;
+            }
+
+            .logo-image {
+                height: 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .flag-line {
+                max-width: 200px;
+                height: 4px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-title::after {
+                width: 60px;
+                height: 3px;
+            }
+
+            .brand-intro {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+
+            .dish-name {
+                font-size: 1.5rem;
+            }
+
+            .dish-desc {
+                font-size: 1rem;
+            }
+
+            .service-card,
+            .contact-card,
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .location-info {
+                padding: 1.5rem;
             }
         }
 
@@ -896,7 +1189,6 @@
             margin-bottom: 1rem;
             line-height: 1;
             filter: grayscale(0%);
-            /* Ensure emojis display properly */
             font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
         }
 
@@ -1280,317 +1572,6 @@
             color: var(--champagne-gold);
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            nav ul {
-                gap: 1.5rem;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            /* Hide video on mobile, show image fallback for bandwidth */
-            .hero-video {
-                display: none;
-            }
-            
-            .hero-image-fallback {
-                display: block;
-            }
-
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                gap: 0;
-                padding: 1rem 0;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                border-top: 2px solid var(--champagne-gold);
-                z-index: 100;
-            }
-
-            nav ul.mobile-open {
-                display: flex;
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                padding: 0;
-                margin: 0;
-            }
-
-            nav ul li a {
-                padding: 1.2rem 2rem;
-                width: 100%;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            }
-
-            nav ul li:last-child a {
-                border-bottom: none;
-            }
-
-            nav a::after {
-                display: none;
-            }
-
-            nav a:hover {
-                background: rgba(212, 175, 55, 0.2);
-            }
-
-            .cta-btn {
-                margin: 0.5rem 0 !important;
-                background: var(--rich-gold) !important;
-            }
-
-            .cta-btn:hover {
-                background: var(--deep-gold) !important;
-            }
-
-                    .logo {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            opacity: 0.8;
-        }
-
-        .logo-image {
-            height: 50px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        @media (max-width: 480px) {
-            .logo span {
-                font-size: 1rem !important;
-            }
-
-            .logo-image {
-                height: 35px;
-            }
-        }
-
-            .logo-image {
-                height: 40px;  /* Smaller on mobile */
-            }
-
-            .hero {
-                padding: 0 1rem;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 3rem 1.5rem; /* Good mobile spacing */
-            }
-
-            section:first-of-type {
-                padding-top: 2rem; /* Less space after hero */
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .section-title::after {
-                width: 80px;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .brand-intro {
-                padding: 2rem;
-                font-size: 1.1rem;
-            }
-
-            .flag-line {
-                max-width: 250px;
-                height: 5px;
-            }
-
-            .dishes-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .dish-card {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .expect-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .expect-content {
-                font-size: 1.1rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .gallery-item {
-                height: 250px;
-            }
-
-            .location-content {
-                grid-template-columns: 1fr;
-            }
-
-            .location-info {
-                padding: 2rem;
-            }
-
-            .map-container {
-                min-height: 300px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .testimonials {
-                padding: 3rem 1.5rem;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-
-            .cta-btn {
-                display: block !important;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .lightbox-prev,
-            .lightbox-next {
-                font-size: 2rem;
-                padding: 0.5rem 1rem;
-            }
-
-            .lightbox-prev {
-                left: 10px;
-            }
-
-            .lightbox-next {
-                right: 10px;
-            }
-
-            .lightbox-close {
-                font-size: 2.5rem;
-                top: -35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-image {
-                height: 35px;  /* Even smaller on small phones */
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .flag-line {
-                max-width: 200px;
-                height: 4px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section-title::after {
-                width: 60px;
-                height: 3px;
-            }
-
-            .brand-intro {
-                padding: 1.5rem;
-                font-size: 1rem;
-            }
-
-            .dish-name {
-                font-size: 1.5rem;
-            }
-
-            .dish-desc {
-                font-size: 1rem;
-            }
-
-            .service-card,
-            .contact-card,
-            .testimonial-card {
-                padding: 1.5rem;
-            }
-
-            .location-info {
-                padding: 1.5rem;
-            }
-        }
-
         html {
             scroll-behavior: smooth;
         }
@@ -1620,11 +1601,10 @@
         </nav>
     </header>
 
-        <!-- Hero Section with Carousel -->
+    <!-- Hero Section with Carousel -->
     <section id="home" class="hero">
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
-                
                 <div class="swiper-slide">
                     <img src="images/hero--new.jpg" alt="Orbit Hotel Ambience">
                 </div>
@@ -1635,14 +1615,11 @@
                     <img src="images/hero-3.jpg" alt="Orbit Hotel Ambience">
                 </div>
             </div>
-            <!-- Navigation Arrows -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-            <!-- Pagination Dots -->
             <div class="swiper-pagination"></div>
         </div>
         
-        <!-- Hero Content (overlays carousel) -->
         <div class="hero-content">
             <h1>Orbit Hotel</h1>
             <p class="hero-subtitle">The hotel of hospitality</p>
@@ -1656,6 +1633,7 @@
             </div>
         </div>
     </section>
+
     <!-- Brand Intro -->
     <section class="pattern-bg" style="padding-top: 6rem;">
         <div class="brand-intro">
@@ -1755,7 +1733,6 @@
         <p class="section-subtitle">Bringing Ethiopian traditions to Dire Dawa</p>
         
         <div class="services-grid">
-
             <div class="service-card">
                 <div class="service-icon">🛏️</div>
                 <h3 class="service-title">Comfortable Rooms</h3>
@@ -1794,7 +1771,6 @@
         </div>
 
         <div class="rooms-grid" style="margin-bottom: 4rem;">
-            <!-- Standard Room -->
             <div class="room-card">
                 <div class="room-image-wrapper" onclick="openRoomLightbox(0)">
                     <img src="images/rooms/standard-room.jpg" alt="Standard Room">
@@ -1821,7 +1797,6 @@
                 </div>
             </div>
 
-            <!-- Double Room -->
             <div class="room-card">
                 <div class="room-image-wrapper" onclick="openRoomLightbox(1)">
                     <img src="images/rooms/double-room.jpg" alt="Double Room">
@@ -1848,7 +1823,6 @@
                 </div>
             </div>
 
-            <!-- Deluxe Suite -->
             <div class="room-card">
                 <div class="room-image-wrapper" onclick="openRoomLightbox(2)">
                     <img src="images/rooms/suite.jpg" alt="Deluxe Suite">
@@ -1920,6 +1894,38 @@
             <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
                 <a href="tel:+251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; text-decoration: none;">📞 Call to Book</a>
                 <a href="https://wa.me/251912345678" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2rem; background: var(--deep-gold); text-decoration: none;" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Experience Section -->
+    <section id="video-experience" style="background: var(--pattern-bg); padding: 4rem 2rem;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title">Experience Orbit Hotel</h2>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">See why our guests keep coming back</p>
+            
+            <div style="background: var(--off-white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 2rem;">
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); max-width: 700px; margin: 0 auto 2.5rem;">
+                    Step inside and discover the warmth of Ethiopian hospitality. From our comfortable rooms to our authentic cuisine, every detail is designed to make you feel at home. Watch our virtual tour and see what makes Orbit Hotel special.
+                </p>
+                
+                <!-- YouTube Video Embed -->
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        src="https://youtu.be/-PeuX--GK-I" 
+                        title="Orbit Hotel Virtual Tour" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2.5rem;">
+                <a href="#rooms" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem; text-decoration: none;">
+                    Book Your Stay Now
+                </a>
             </div>
         </div>
     </section>
@@ -2053,7 +2059,7 @@
             </div>
         </div>
 
-                        <div style="text-align: center; margin-top: 3rem;">
+        <div style="text-align: center; margin-top: 3rem;">
             <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
             <div class="social-links" style="justify-content: center;">
                 <a href="https://facebook.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="Facebook" style="font-size: 2rem; color: #1877F2;">
@@ -2066,8 +2072,6 @@
                     <i class="fab fa-x-twitter"></i>
                 </a>
             </div>
-        </div>
-        </div>
         </div>
     </section>
 
@@ -2100,7 +2104,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -2123,7 +2127,7 @@
         });
 
         // Lightbox Gallery
-            const galleryImages = [
+        const galleryImages = [
             'images/gallery/ambience.jpg',
             'images/gallery/dining-area.jpg',
             'images/gallery/interior.jpg',
@@ -2153,35 +2157,29 @@
             
             img.src = galleryImages[index];
             
-            // Show navigation arrows for gallery
             if (prevBtn) prevBtn.style.display = 'block';
             if (nextBtn) nextBtn.style.display = 'block';
             
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
             
-            // Mark this as gallery (with navigation)
             modal.removeAttribute('data-room-only');
         }
 
         function openRoomLightbox(index) {
-            // Open lightbox with ONLY this specific room image - no navigation
             const modal = document.getElementById('lightboxModal');
             const img = document.getElementById('lightboxImage');
             const prevBtn = document.querySelector('.lightbox-prev');
             const nextBtn = document.querySelector('.lightbox-next');
             
-            // Set the specific room image
             img.src = roomImages[index];
             
-            // Hide navigation arrows for room images
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
             
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
             
-            // Mark this as a single-room lightbox (no navigation)
             modal.setAttribute('data-room-only', 'true');
         }
 
@@ -2196,10 +2194,9 @@
         function changeImage(direction, event) {
             event.stopPropagation();
             
-            // Check if this is a room-only lightbox (no navigation allowed)
             const modal = document.getElementById('lightboxModal');
             if (modal.getAttribute('data-room-only') === 'true') {
-                return; // Don't allow navigation for individual room cards
+                return;
             }
             
             const images = currentImageSet === 'gallery' ? galleryImages : roomImages;
@@ -2215,14 +2212,12 @@
             img.src = images[currentImageIndex];
         }
 
-        // Keyboard navigation for lightbox
         document.addEventListener('keydown', function(event) {
             const modal = document.getElementById('lightboxModal');
             if (modal.classList.contains('active')) {
                 if (event.key === 'Escape') {
                     closeLightbox(event);
                 } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-                    // Only allow arrow navigation for gallery, not for individual room cards
                     if (modal.getAttribute('data-room-only') !== 'true') {
                         const direction = event.key === 'ArrowLeft' ? -1 : 1;
                         changeImage(direction, event);
@@ -2230,7 +2225,8 @@
                 }
             }
         });
-                // Hero Carousel
+
+        // Hero Carousel
         const heroSwiper = new Swiper('.hero-swiper', {
             loop: true,
             autoplay: {
