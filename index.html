@@ -14,7 +14,9 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             /* Luxury White & Champagne Gold Color Palette */
@@ -98,7 +100,7 @@
             }
         }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             background: var(--luxury-white);
             overflow-x: hidden;
@@ -171,7 +173,9 @@
             background: none;
             border: 2px solid var(--rich-gold);
             color: var(--rich-gold);
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.5rem;
+            font-weight: 700;
             cursor: pointer;
             padding: 0.5rem 0.8rem;
             border-radius: 4px;
@@ -203,8 +207,9 @@
         nav a {
             color: var(--charcoal);
             text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.05rem;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             position: relative;
@@ -235,7 +240,10 @@
             color: var(--luxury-white) !important;
             padding: 0.8rem 2rem;
             border-radius: 4px;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             border: 2px solid var(--rich-gold);
         }
@@ -406,7 +414,7 @@
 
         /* Section Styling */
         section {
-            padding: 5rem 2rem;
+            padding: 4rem 2rem; /* Reduced from 5rem - tighter, more modern */
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -527,7 +535,7 @@
         }
 
         .dish-name {
-            font-family: 'Merriweather', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             color: var(--soft-black);
             margin-bottom: 0.8rem;
@@ -545,6 +553,264 @@
             font-size: 1.5rem;
             color: var(--rich-gold);
             font-weight: 600;
+        }
+
+        /* Luxury Room Cards */
+        .room-card {
+            background: var(--luxury-white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border: 1px solid var(--medium-gray);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .room-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+            border-color: var(--rich-gold);
+        }
+
+        .room-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--rich-gold), var(--champagne-gold), var(--rich-gold));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .room-card:hover::before {
+            opacity: 1;
+        }
+
+        .room-image-wrapper {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .room-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .room-card:hover .room-image-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .room-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .room-card:hover .room-image-overlay {
+            opacity: 1;
+        }
+
+        .room-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--rich-gold);
+            color: var(--luxury-white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            z-index: 10;
+        }
+
+        .room-info {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .room-category {
+            color: var(--rich-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .room-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--soft-black);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            min-height: 2.6rem; /* Ensures consistent height */
+        }
+
+        .room-desc {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            min-height: 5.1rem; /* About 3 lines of text */
+        }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            min-height: 4rem; /* Ensures consistent feature area */
+        }
+
+        .room-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .room-feature::before {
+            content: '✓';
+            color: var(--rich-gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .room-price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--medium-gray);
+            margin-top: auto; /* Pushes to bottom */
+        }
+
+        .room-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--rich-gold);
+            font-weight: 700;
+        }
+
+        .room-price-label {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .room-view-btn {
+            background: transparent;
+            color: var(--soft-black);
+            border: 2px solid var(--soft-black);
+            padding: 0.9rem 1.8rem;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .room-view-btn:hover {
+            background: var(--soft-black);
+            color: var(--luxury-white);
+            transform: translateX(5px);
+        }
+
+        /* Room Cards Grid */
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .rooms-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .rooms-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .rooms-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .room-image-wrapper {
+                height: 220px;
+            }
+
+            .room-info {
+                padding: 1.8rem;
+            }
+
+            .room-name {
+                font-size: 1.6rem;
+                min-height: auto; /* Remove fixed height on mobile */
+            }
+
+            .room-desc {
+                font-size: 1rem;
+                min-height: auto; /* Remove fixed height on mobile */
+            }
+
+            .room-features {
+                min-height: auto; /* Remove fixed height on mobile */
+            }
+
+            .room-price {
+                font-size: 1.6rem;
+            }
+
+            .room-price-section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.2rem;
+            }
+
+            .room-view-btn {
+                width: 100%;
+                min-width: auto;
+                padding: 1rem 1.8rem;
+            }
         }
 
         /* What to Expect */
@@ -635,7 +901,7 @@
         }
 
         .service-title {
-            font-family: 'Merriweather', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             color: var(--soft-black);
             margin-bottom: 0.5rem;
@@ -673,18 +939,6 @@
             transition: all 0.3s ease;
         }
 
-        .gallery-item::before {
-            content: '🔍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            font-size: 3rem;
-            z-index: 2;
-            transition: all 0.3s ease;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
         .gallery-item::after {
             content: '';
             position: absolute;
@@ -694,10 +948,6 @@
             bottom: 0;
             background: rgba(212, 175, 55, 0);
             transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover::before {
-            transform: translate(-50%, -50%) scale(1);
         }
 
         .gallery-item:hover::after {
@@ -823,7 +1073,7 @@
         }
 
         .location-info h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             color: var(--soft-black);
             margin-bottom: 1.5rem;
@@ -974,7 +1224,7 @@
         }
 
         .footer-section h4 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Cormorant Garamond', serif;
             color: var(--champagne-gold);
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -993,18 +1243,34 @@
 
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 1rem;
         }
 
         .social-links a {
             font-size: 1.8rem;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
         }
 
         .social-links a:hover {
-            transform: scale(1.2);
-            color: var(--champagne-gold);
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .social-links a i {
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover i {
+            transform: scale(1.1);
         }
 
         .footer-bottom {
@@ -1150,7 +1416,11 @@
 
         @media (max-width: 768px) {
             section {
-                padding: 3rem 1.5rem;
+                padding: 3rem 1.5rem; /* Good mobile spacing */
+            }
+
+            section:first-of-type {
+                padding-top: 2rem; /* Less space after hero */
             }
 
             .section-title {
@@ -1336,11 +1606,11 @@
         <nav>
             <a href="" class="logo">
                 <img src="images/logo.svg" alt="Orbit Hotel Logo" class="logo-image">
-                <span style="font-family: 'Merriweather', serif; font-size: 1.3rem; font-weight: 600; color: var(--soft-black); letter-spacing: 0.5px;">Orbit Hotel</span>
+                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--soft-black); letter-spacing: 0.5px;">Orbit Hotel</span>
             </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
             <ul id="mobileMenu">
-                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="" onclick="closeMobileMenu()">Home</a></li>
                 <li><a href="#menu" onclick="closeMobileMenu()">Menu</a></li>
                 <li><a href="#rooms" onclick="closeMobileMenu()">Rooms</a></li>
                 <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
@@ -1466,7 +1736,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="menu/orbit-hotel-menu.pdf" class="cta-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;" target="_blank" rel="noopener noreferrer">Download Full Menu (PDF)</a>
+            <a href="menu/orbit-hotel-menu.pdf" class="cta-btn menu-download-btn" style="display: inline-block; font-size: 1.1rem; padding: 1rem 2.5rem;" target="_blank" rel="noopener noreferrer">Download Full Menu (PDF)</a>
         </div>
     </section>
 
@@ -1522,82 +1792,127 @@
             </p>
         </div>
 
-        <div class="dishes-grid" style="margin-bottom: 4rem;">
-            <div class="dish-card">
-                <div class="dish-image" onclick="openRoomLightbox(0)" style="cursor: pointer; position: relative;">
-                    <img src="images/rooms/standard-room.jpg" alt="Standard Room" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+        <div class="rooms-grid" style="margin-bottom: 4rem;">
+            <!-- Standard Room -->
+            <div class="room-card">
+                <div class="room-image-wrapper" onclick="openRoomLightbox(0)">
+                    <img src="images/rooms/standard-room.jpg" alt="Standard Room">
+                    <div class="room-image-overlay"></div>
+                    <div class="room-badge">Popular</div>
                 </div>
-                <div class="dish-info">
-                    <h3 class="dish-name">Standard Room</h3>
-                    <p class="dish-desc">Cozy room with comfortable bed, private bathroom, WiFi, and air conditioning. Perfect for solo travelers.</p>
-                    <p class="dish-price">From ETB 800/night</p>
+                <div class="room-info">
+                    <div class="room-category">Essential Comfort</div>
+                    <h3 class="room-name">Standard Room</h3>
+                    <p class="room-desc">Cozy and comfortable room perfect for solo travelers or couples seeking a clean, well-appointed space with all essential amenities.</p>
+                    <div class="room-features">
+                        <span class="room-feature">Private Bathroom</span>
+                        <span class="room-feature">Free WiFi</span>
+                        <span class="room-feature">Air Conditioning</span>
+                        <span class="room-feature">Flat-Screen TV</span>
+                    </div>
+                    <div class="room-price-section">
+                        <div>
+                            <div class="room-price">ETB 800</div>
+                            <span class="room-price-label">per night</span>
+                        </div>
+                        <button class="room-view-btn" onclick="openRoomLightbox(0)">View Room</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="dish-card">
-                <div class="dish-image" onclick="openRoomLightbox(1)" style="cursor: pointer; position: relative;">
-                    <img src="images/rooms/double-room.jpg" alt="Double Room" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+            <!-- Double Room -->
+            <div class="room-card">
+                <div class="room-image-wrapper" onclick="openRoomLightbox(1)">
+                    <img src="images/rooms/double-room.jpg" alt="Double Room">
+                    <div class="room-image-overlay"></div>
+                    <div class="room-badge">Best Value</div>
                 </div>
-                <div class="dish-info">
-                    <h3 class="dish-name">Double Room</h3>
-                    <p class="dish-desc">Spacious room with double bed, work desk, modern bathroom, and complimentary breakfast included.</p>
-                    <p class="dish-price">From ETB 1,200/night</p>
+                <div class="room-info">
+                    <div class="room-category">Enhanced Comfort</div>
+                    <h3 class="room-name">Double Room</h3>
+                    <p class="room-desc">Spacious room with modern amenities, work desk, and complimentary breakfast. Ideal for business travelers and extended stays.</p>
+                    <div class="room-features">
+                        <span class="room-feature">Work Desk</span>
+                        <span class="room-feature">Breakfast Included</span>
+                        <span class="room-feature">Modern Bathroom</span>
+                        <span class="room-feature">Double Bed</span>
+                    </div>
+                    <div class="room-price-section">
+                        <div>
+                            <div class="room-price">ETB 1,200</div>
+                            <span class="room-price-label">per night</span>
+                        </div>
+                        <button class="room-view-btn" onclick="openRoomLightbox(1)">View Room</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="dish-card">
-                <div class="dish-image" onclick="openRoomLightbox(2)" style="cursor: pointer; position: relative;">
-                    <img src="images/rooms/suite.jpg" alt="Suite" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0; transition: opacity 0.3s ease; z-index: 10;" class="zoom-icon">🔍</div>
+            <!-- Deluxe Suite -->
+            <div class="room-card">
+                <div class="room-image-wrapper" onclick="openRoomLightbox(2)">
+                    <img src="images/rooms/suite.jpg" alt="Deluxe Suite">
+                    <div class="room-image-overlay"></div>
+                    <div class="room-badge">Premium</div>
                 </div>
-                <div class="dish-info">
-                    <h3 class="dish-name">Deluxe Suite</h3>
-                    <p class="dish-desc">Premium suite with separate living area, king bed, luxury bathroom, minibar, and stunning views.</p>
-                    <p class="dish-price">From ETB 2,000/night</p>
+                <div class="room-info">
+                    <div class="room-category">Luxury Experience</div>
+                    <h3 class="room-name">Deluxe Suite</h3>
+                    <p class="room-desc">Premium suite with separate living area, king bed, luxury bathroom, minibar, and stunning views of the city.</p>
+                    <div class="room-features">
+                        <span class="room-feature">Living Area</span>
+                        <span class="room-feature">King Bed</span>
+                        <span class="room-feature">Minibar</span>
+                        <span class="room-feature">City Views</span>
+                    </div>
+                    <div class="room-price-section">
+                        <div>
+                            <div class="room-price">ETB 2,000</div>
+                            <span class="room-price-label">per night</span>
+                        </div>
+                        <button class="room-view-btn" onclick="openRoomLightbox(2)">View Room</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div style="background: linear-gradient(135deg, var(--deep-gold), var(--text-dark)); color: var(--luxury-white); padding: 3rem 2rem; border-radius: 8px; margin-bottom: 3rem;">
-            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--champagne-gold);">Room Amenities</h3>
+        <div style="background: linear-gradient(135deg, var(--champagne-gold), var(--off-white)); color: var(--soft-black); padding: 3rem 2rem; border-radius: 8px; margin-bottom: 3rem; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);">
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--rich-gold);">Room Amenities</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">📶</div>
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Free WiFi</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">High-speed internet in all rooms</p>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Free WiFi</h4>
+                    <p style="font-size: 1rem; color: var(--text-dark);">High-speed internet in all rooms</p>
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">❄️</div>
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Air Conditioning</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Climate control for comfort</p>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Air Conditioning</h4>
+                    <p style="font-size: 1rem; color: var(--text-dark);">Climate control for comfort</p>
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚿</div>
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Private Bathroom</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Hot water & toiletries</p>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Private Bathroom</h4>
+                    <p style="font-size: 1rem; color: var(--text-dark);">Hot water & toiletries</p>
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">📺</div>
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Flat-Screen TV</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Cable channels available</p>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Flat-Screen TV</h4>
+                    <p style="font-size: 1rem; color: var(--text-dark);">Cable channels available</p>
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">🍳</div>
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Breakfast Included</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Traditional Ethiopian breakfast</p>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Breakfast Included</h4>
+                    <p style="font-size: 1rem; color: var(--text-dark);">Traditional Ethiopian breakfast</p>
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚗</div>
-                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Airport Shuttle</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Free transport on request</p>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Airport Shuttle</h4>
+                    <p style="font-size: 1rem; color: var(--text-dark);">Free transport on request</p>
                 </div>
             </div>
         </div>
 
         <div style="text-align: center; background: var(--off-white); padding: 3rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-            <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; color: var(--soft-black); margin-bottom: 1rem;">Ready to Book Your Stay?</h3>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--soft-black); margin-bottom: 1rem;">Ready to Book Your Stay?</h3>
             <p style="font-size: 1.2rem; color: var(--text-dark); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Contact us directly to reserve your room. We're here to make your stay in Dire Dawa comfortable and memorable.
             </p>
@@ -1733,16 +2048,22 @@
 
             <div class="contact-card">
                 <h3>✉️ Email</h3>
-                <a href= hello@orbit-hotel.com> <span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa0bdada6bbe2a7a0bbaaa3e1aca0a2">[email&#160;protected]</span></a>
+                <a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a>
             </div>
         </div>
 
                         <div style="text-align: center; margin-top: 3rem;">
-            <h3 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1rem;">Follow Us</h3>
             <div class="social-links" style="justify-content: center;">
-                <a href="https://facebook.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="Facebook" style="font-size: 2rem; color: #1877F2;">f</a>
-                <a href="https://instagram.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="Instagram" style="font-size: 2rem; color: #E4405F;">📷</a>
-                <a href="https://x.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="X" style="font-size: 2rem; color: #000;">𝕏</a>
+                <a href="https://facebook.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="Facebook" style="font-size: 2rem; color: #1877F2;">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="Instagram" style="font-size: 2rem; color: #E4405F;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/orbithhotel" target="_blank" rel="noopener noreferrer" title="X (Twitter)" style="font-size: 2rem; color: #000000;">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
             </div>
         </div>
         </div>
@@ -1769,7 +2090,7 @@
                 <h4>Contact</h4>
                 <p>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia</p>
                 <p>+251 91 234 5678</p>
-                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86eee3eaeae9c6e9f4e4eff2abeee9f2e3eaa8e5e9eb">[email&#160;protected]</a></p>
+                <p><a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a></p>
             </div>
         </div>
 
@@ -1826,19 +2147,41 @@
             currentImageSet = 'gallery';
             const modal = document.getElementById('lightboxModal');
             const img = document.getElementById('lightboxImage');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+            
             img.src = galleryImages[index];
+            
+            // Show navigation arrows for gallery
+            if (prevBtn) prevBtn.style.display = 'block';
+            if (nextBtn) nextBtn.style.display = 'block';
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Mark this as gallery (with navigation)
+            modal.removeAttribute('data-room-only');
         }
 
         function openRoomLightbox(index) {
-            currentImageIndex = index;
-            currentImageSet = 'rooms';
+            // Open lightbox with ONLY this specific room image - no navigation
             const modal = document.getElementById('lightboxModal');
             const img = document.getElementById('lightboxImage');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+            
+            // Set the specific room image
             img.src = roomImages[index];
+            
+            // Hide navigation arrows for room images
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Mark this as a single-room lightbox (no navigation)
+            modal.setAttribute('data-room-only', 'true');
         }
 
         function closeLightbox(event) {
@@ -1851,6 +2194,12 @@
 
         function changeImage(direction, event) {
             event.stopPropagation();
+            
+            // Check if this is a room-only lightbox (no navigation allowed)
+            const modal = document.getElementById('lightboxModal');
+            if (modal.getAttribute('data-room-only') === 'true') {
+                return; // Don't allow navigation for individual room cards
+            }
             
             const images = currentImageSet === 'gallery' ? galleryImages : roomImages;
             currentImageIndex += direction;
@@ -1871,10 +2220,12 @@
             if (modal.classList.contains('active')) {
                 if (event.key === 'Escape') {
                     closeLightbox(event);
-                } else if (event.key === 'ArrowLeft') {
-                    changeImage(-1, event);
-                } else if (event.key === 'ArrowRight') {
-                    changeImage(1, event);
+                } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                    // Only allow arrow navigation for gallery, not for individual room cards
+                    if (modal.getAttribute('data-room-only') !== 'true') {
+                        const direction = event.key === 'ArrowLeft' ? -1 : 1;
+                        changeImage(direction, event);
+                    }
                 }
             }
         });
