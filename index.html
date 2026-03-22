@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <!-- Amharic Font for Ethiopian Cultural Identity -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,6 +34,14 @@
             --light-gray: #F5F5F5;
             --medium-gray: #E8E8E8;
             --text-dark: #333333;
+            
+            /* Ethiopian Earth Tones - Cultural Identity */
+            --ethiopian-clay: #C17A3A;      /* Terracotta pottery */
+            --coffee-brown: #4A3428;         /* Ethiopian coffee */
+            --highland-green: #5C7A4B;       /* Ethiopian highlands */
+            --sunset-ochre: #D4915A;         /* Simien sunset */
+            --injera-gray: #8B8680;          /* Traditional injera */
+            --warm-cream: #F5E6D3;           /* Warmer base tone */
         }
 
         * {
@@ -112,7 +119,9 @@
             color: var(--text-dark);
             background: var(--luxury-white);
             overflow-x: hidden;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
         }
 
         /* Subtle Gold Pattern Background */
@@ -356,8 +365,8 @@
         }
 
         .hero h1 {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem;
             font-weight: 700;
             color: var(--champagne-gold);
             margin-bottom: 1.5rem;
@@ -375,6 +384,17 @@
             text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
+        .hero-subtitle-amharic {
+            font-family: 'Noto Sans Ethiopic', serif;
+            font-size: 1.8rem;
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+            line-height: 1.3;
+        }
+
         .flag-line {
             display: flex;
             justify-content: center;
@@ -386,7 +406,9 @@
         }
 
         .flag-line::before {
-            content: '⭐';
+            content: '\f0f4';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             font-size: 3rem;
             color: var(--rich-gold);
             filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.5));
@@ -414,9 +436,11 @@
         }
 
         .info-item::before {
-            content: '●';
+            content: '\f3c5';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             color: var(--champagne-gold);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             line-height: 1;
         }
 
@@ -428,12 +452,13 @@
         }
 
         .section-title {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 4.5rem;
-            color: var(--soft-black);
-            margin-bottom: 3.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--coffee-brown);
+            margin-bottom: 1rem;
             text-align: center;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: -0.5px;
             position: relative;
             padding-bottom: 1.5rem;
         }
@@ -458,6 +483,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.8;
         }
 
         /* Brand Intro */
@@ -547,7 +573,7 @@
             font-size: 1.8rem;
             color: var(--soft-black);
             margin-bottom: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .dish-desc {
@@ -658,7 +684,7 @@
         .room-category {
             color: var(--rich-gold);
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 0.8rem;
@@ -669,7 +695,7 @@
             font-size: 2rem;
             color: var(--soft-black);
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.3;
             min-height: 2.6rem;
         }
@@ -699,9 +725,10 @@
         }
 
         .room-feature::before {
-            content: '✓';
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             color: var(--rich-gold);
-            font-weight: bold;
             font-size: 1.1rem;
         }
 
@@ -887,6 +914,14 @@
         }
 
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .hero-subtitle-amharic {
+                font-size: 1.4rem;
+            }
+
             .rooms-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
@@ -939,7 +974,7 @@
             }
 
             .section-title {
-                font-size: 3.5rem;
+                font-size: 2.5rem;
             }
 
             .section-title::after {
@@ -1068,6 +1103,10 @@
                 font-size: 2.5rem;
             }
 
+            .hero-subtitle-amharic {
+                font-size: 1.2rem;
+            }
+
             .hero-subtitle {
                 font-size: 1rem;
             }
@@ -1078,7 +1117,7 @@
             }
 
             .section-title {
-                font-size: 5rem;
+                font-size: 2rem;
             }
 
             .section-title::after {
@@ -1626,7 +1665,8 @@
         
         <div class="hero-content">
             <h1>Orbit Hotel</h1>
-            <p class="hero-subtitle">The hotel of hospitality</p>
+            <p class="hero-subtitle-amharic">ኦርቢት ሆቴል</p>
+            <p class="hero-subtitle">Where Ethiopian Heritage Meets Modern Comfort</p>
             <div class="flag-line"></div>
             <div class="hero-info">
                 <div class="info-item">2 Minutes from Airport</div>
@@ -1738,25 +1778,25 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🛏️</div>
+                <div class="service-icon"><i class="fas fa-bed"></i></div>
                 <h3 class="service-title">Comfortable Rooms</h3>
                 <p class="service-desc">Clean, modern rooms just 2 minutes from the airport. Perfect for travelers and business guests.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">📦</div>
+                <div class="service-icon"><i class="fas fa-shopping-bag"></i></div>
                 <h3 class="service-title">Takeaway & Delivery</h3>
                 <p class="service-desc">Enjoy our authentic flavors at home with our convenient takeaway and delivery options.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">🚗</div>
+                <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
                 <h3 class="service-title">Airport Proximity</h3>
                 <p class="service-desc">Just 2 minutes from Dire Dawa Airport. Ideal for early flights or late arrivals.</p>
             </div>
 
             <div class="service-card">
-                <div class="service-icon">🎉</div>
+                <div class="service-icon"><i class="fas fa-glass-cheers"></i></div>
                 <h3 class="service-title">Private Events</h3>
                 <p class="service-desc">Host your celebrations with us and share the joy of Ethiopian cuisine with loved ones.</p>
             </div>
@@ -1855,35 +1895,35 @@
         </div>
 
         <div style="background: linear-gradient(135deg, var(--champagne-gold), var(--off-white)); color: var(--soft-black); padding: 3rem 2rem; border-radius: 8px; margin-bottom: 3rem; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);">
-            <h3 style="font-family: 'Pinyon Script', cursive; font-size: 3.5rem; text-align: center; margin-bottom: 2rem; color: var(--rich-gold);">Room Amenities</h3>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--rich-gold);">Room Amenities</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📶</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--rich-gold);"><i class="fas fa-wifi"></i></div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Free WiFi</h4>
                     <p style="font-size: 1rem; color: var(--text-dark);">High-speed internet in all rooms</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">❄️</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--rich-gold);"><i class="fas fa-snowflake"></i></div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Air Conditioning</h4>
                     <p style="font-size: 1rem; color: var(--text-dark);">Climate control for comfort</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚿</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--rich-gold);"><i class="fas fa-shower"></i></div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Private Bathroom</h4>
                     <p style="font-size: 1rem; color: var(--text-dark);">Hot water & toiletries</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📺</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--rich-gold);"><i class="fas fa-tv"></i></div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Flat-Screen TV</h4>
                     <p style="font-size: 1rem; color: var(--text-dark);">Cable channels available</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🍳</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--rich-gold);"><i class="fas fa-mug-hot"></i></div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Breakfast Included</h4>
                     <p style="font-size: 1rem; color: var(--text-dark);">Traditional Ethiopian breakfast</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚗</div>
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--rich-gold);"><i class="fas fa-shuttle-van"></i></div>
                     <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--soft-black);">Airport Shuttle</h4>
                     <p style="font-size: 1rem; color: var(--text-dark);">Free transport on request</p>
                 </div>
@@ -2059,7 +2099,7 @@
 
             <div class="contact-card">
                 <h3>✉️ Email</h3>
-                <a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a>
+                <a href="mailto:info@orbithotel.com">info@orbithotel.com</a>
             </div>
         </div>
 
@@ -2099,7 +2139,7 @@
                 <h4>Contact</h4>
                 <p>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia</p>
                 <p>+251 91 234 5678</p>
-                <p><a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a></p>
+                <p><a href="mailto:info@orbithotel.com">info@orbithotel.com</a></p>
             </div>
         </div>
 
@@ -2108,7 +2148,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -2248,8 +2288,8 @@
             speed: 800,
             effect: 'fade',
             fadeEffect: {
-                crossFade: true,
-            },
+                crossFade: true
+            }
         });
     </script>
 </body>
