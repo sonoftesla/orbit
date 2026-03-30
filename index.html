@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The hotel of hospitality</title>
+    <title>Orbit Hotel - ኦርቢት ሆቴል | Ethiopian Luxury in Dire Dawa</title>
+    <meta name="description" content="Experience authentic Ethiopian hospitality at Orbit Hotel in Dire Dawa. Comfortable rooms, traditional cuisine, just 2 minutes from the airport.">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -48,6 +56,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         /* Hero Carousel */
         .hero-swiper {
@@ -113,6 +126,32 @@
             #video-experience {
                 padding: 3rem 1.5rem !important;
             }
+
+            /* Video Container Mobile Optimization */
+            #video-experience .section-subtitle {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            #video-experience > div {
+                padding: 0 !important;
+            }
+
+            #video-experience .video-intro-text {
+                font-size: 1rem !important;
+                padding: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            #video-experience .video-wrapper-card {
+                padding: 1rem !important;
+                margin: 0 !important;
+            }
+
+            #video-experience .video-responsive {
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
             
         }
         body {
@@ -123,6 +162,17 @@
             line-height: 1.8;
             font-size: 1.05rem;
             letter-spacing: 0.3px;
+        }
+
+        /* Global Responsive Image Optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        iframe {
+            max-width: 100%;
         }
 
         /* Subtle Gold Pattern Background */
@@ -1198,6 +1248,26 @@
                 font-size: 0.95rem;
                 padding: 0.95rem 1.5rem;
             }
+
+            /* Video Section Small Mobile Optimization */
+            #video-experience {
+                padding: 2rem 1rem !important;
+            }
+
+            #video-experience .video-wrapper-card {
+                padding: 1rem !important;
+                border-radius: 8px !important;
+            }
+
+            #video-experience .video-intro-text {
+                font-size: 0.95rem !important;
+                padding: 1rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            #video-experience .video-responsive {
+                border-radius: 6px !important;
+            }
         }
 
         /* What to Expect */
@@ -1994,30 +2064,36 @@
     </section>
 
     <!-- Video Experience Section -->
-    <section id="video-experience" style="background: var(--pattern-bg); padding: 4rem 2rem;">
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+    <section id="video-experience" style="background: var(--soft-cream); padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
             <h2 class="section-title">Experience Orbit Hotel</h2>
             <p class="section-subtitle" style="margin-bottom: 2rem;">See why our guests keep coming back</p>
             
-            <div style="background: var(--off-white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 2rem;">
-                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); max-width: 700px; margin: 0 auto 2.5rem;">
-                    Step inside and discover the warmth of Ethiopian hospitality. From our comfortable rooms to our authentic cuisine, every detail is designed to make you feel at home. Watch our virtual tour and see what makes Orbit Hotel special.
+            <div class="video-wrapper-card" style="background: var(--luxury-white); padding: 2rem; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <p class="video-intro-text" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark); max-width: 700px; margin: 0 auto 2rem;">
+                    Step inside and discover the warmth of Ethiopian hospitality. From our comfortable rooms to our authentic cuisine, every detail is designed to make you feel at home.
                 </p>
                 
-                <!-- YouTube Video Embed -->
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); width: 100%; max-width: 900px; margin: 0 auto;">
+                <!-- YouTube Video Embed - Optimized for Mobile -->
+                <div class="video-responsive" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); max-width: 100%; margin: 0 auto; background: #000;">
                     <iframe 
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        src="https://www.youtube.com/embed/TGocfNGOkRA?rel=0&modestbranding=1&fs=1" 
+                        src="https://www.youtube.com/embed/TGocfNGOkRA?rel=0&modestbranding=1&playsinline=1&autoplay=0&mute=1&controls=1&loop=0&cc_load_policy=0" 
                         title="Orbit Hotel Virtual Tour" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                         loading="lazy">
                     </iframe>
                 </div>
+                
+                <!-- Play Hint for Better Engagement -->
+                <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--coffee-brown); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <i class="fas fa-play-circle" style="color: var(--rich-gold); font-size: 1.3rem;"></i> 
+                    <span>Click to watch our virtual tour</span>
+                </p>
             </div>
             
-            <div style="margin-top: 2.5rem;">
+            <div style="margin-top: 2rem;">
                 <a href="#rooms" class="cta-btn" style="display: inline-block; font-size: 0.9rem; padding: 0.75rem 1.75rem; text-decoration: none;">
                     Book Your Stay Now
                 </a>
@@ -2150,7 +2226,7 @@
 
             <div class="contact-card">
                 <h3>✉️ Email</h3>
-                <a href="mailto:hello@orbithotel.com">hello@orbit-hotel.com</a>
+                <a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a>
             </div>
         </div>
 
@@ -2199,7 +2275,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
