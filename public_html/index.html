@@ -573,75 +573,6 @@
             margin-top: 3rem;
         }
 
-        .dish-card {
-            background: var(--luxury-white);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 20px rgba(44, 44, 44, 0.08);
-            border-top: 4px solid var(--rich-gold);
-        }
-
-        .dish-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
-            border-top-color: var(--champagne-gold);
-        }
-
-        .dish-image {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, var(--text-dark), var(--burnt-sienna));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dish-image img {
-            display: block;
-        }
-
-        .dish-image:hover .zoom-icon {
-            opacity: 1 !important;
-        }
-
-        .dish-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.1), transparent);
-            pointer-events: none;
-        }
-
-        .dish-info {
-            padding: 2rem;
-        }
-
-        .dish-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--soft-black);
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-
-        .dish-desc {
-            color: var(--text-dark);
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .dish-price {
-            font-size: 1.5rem;
-            color: var(--rich-gold);
-            font-weight: 600;
-        }
 
         /* Luxury Room Cards */
         .room-card {
@@ -1065,18 +996,7 @@
                 gap: 2rem;
             }
 
-            .dish-card {
-                max-width: 500px;
-                margin: 0 auto;
-            }
 
-            .expect-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .expect-content {
-                font-size: 1.1rem;
-            }
 
             .services-grid {
                 grid-template-columns: 1fr;
@@ -1145,9 +1065,6 @@
                 justify-content: center;
             }
 
-            .menu-download-btn {
-                margin: 2rem auto;
-            }
 
             .lightbox-prev,
             .lightbox-next {
@@ -1226,13 +1143,6 @@
                 font-size: 1rem;
             }
 
-            .dish-name {
-                font-size: 1.5rem;
-            }
-
-            .dish-desc {
-                font-size: 1rem;
-            }
 
             .service-card,
             .contact-card,
@@ -1270,49 +1180,6 @@
             }
         }
 
-        /* What to Expect */
-        .expect-section {
-            background: linear-gradient(135deg, var(--soft-black), var(--text-dark));
-            color: var(--luxury-white);
-            text-align: center;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .expect-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 20px,
-                    rgba(252, 221, 9, 0.05) 20px,
-                    rgba(252, 221, 9, 0.05) 40px
-                );
-            pointer-events: none;
-        }
-
-        .expect-section .section-title {
-            color: var(--champagne-gold);
-            z-index: 2;
-            position: relative;
-        }
-
-        .expect-content {
-            max-width: 800px;
-            margin: 2rem auto 0;
-            font-size: 1.25rem;
-            line-height: 1.9;
-            z-index: 2;
-            position: relative;
-        }
 
         /* Services */
         .services-grid {
@@ -1769,73 +1636,73 @@
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-2.jpeg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-2.jpeg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
                     <img src="images/hero-2.jpg" alt="Orbit Hotel Rooms">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-3.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-3.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-4.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-4.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-5.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-5.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-6.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-6.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-7.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-7.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-8.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-8.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-9.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-9.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-10.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-10.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-11.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-11.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-12.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-12.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-13.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-13.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-14.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-14.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-15.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-15.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-16.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-16.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-17.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-17.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-18.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-18.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-19.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-19.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-20.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-20.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-21.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-21.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-22.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-22.jpg" alt="Orbit Hotel Ambience">
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/hero/hero-23.jpg" alt="Orbit Hotel Ambience">
+                    <img src="images/hero-23.jpg" alt="Orbit Hotel Ambience">
                 </div>
             </div>
             <div class="swiper-button-prev"></div>
@@ -2227,7 +2094,7 @@
 
             <div class="contact-card">
                 <h3>✉️ Email</h3>
-                <a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a>
+                <a href="/cdn-cgi/l/email-protection#dbb3beb7b7b49bb4a9b9b2aff6b3b4afbeb7f5b8b4b6"><span class="__cf_email__" data-cfemail="ef878a838380af809d8d869bc287809b8a83c18c8082">[email&#160;protected]</span></a>
             </div>
         </div>
 
@@ -2267,7 +2134,7 @@
                 <h4>Contact</h4>
                 <p>Near Dire Dawa Airport<br>Dire Dawa, Ethiopia</p>
                 <p>+251 91 234 5678</p>
-                <p><a href="mailto:hello@orbit-hotel.com">hello@orbit-hotel.com</a></p>
+                <p><a href="/cdn-cgi/l/email-protection#9af2fff6f6f5daf5e8f8f3eeb7f2f5eefff6b4f9f5f7"><span class="__cf_email__" data-cfemail="bbd3ded7d7d4fbd4c9d9d2cf96d3d4cfded795d8d4d6">[email&#160;protected]</span></a></p>
             </div>
         </div>
 
@@ -2276,7 +2143,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
